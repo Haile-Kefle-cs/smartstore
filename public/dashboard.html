@@ -11,27 +11,25 @@
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
-            --info: #3b82f6;
             --dark: #1e293b;
             --light: #f1f5f9;
             --border: #e2e8f0;
-            --sidebar-width: 280px;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         
         body {
             font-family: 'Nyala', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--light);
             color: var(--dark);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
         
         .app-container { display: flex; min-height: 100vh; }
         
-        /* Sidebar */
         .sidebar {
-            width: var(--sidebar-width);
+            width: 280px;
             background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
             color: white;
             position: fixed;
@@ -46,7 +44,7 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
         
         .sidebar-logo {
@@ -60,15 +58,14 @@
             font-size: 24px;
         }
         
-        .sidebar-title h2 { font-size: 20px; }
-        .sidebar-title p { font-size: 11px; color: rgba(255,255,255,0.6); }
+        .sidebar-title h2 { font-size: 18px; }
+        .sidebar-title p { font-size: 10px; color: rgba(255,255,255,0.6); }
         
         .sidebar-section {
             padding: 15px 20px 5px;
             font-size: 11px;
             text-transform: uppercase;
             color: rgba(255,255,255,0.4);
-            letter-spacing: 1px;
         }
         
         .nav-menu { list-style: none; padding: 10px 0; }
@@ -80,27 +77,26 @@
             padding: 12px 15px;
             color: rgba(255,255,255,0.8);
             cursor: pointer;
-            gap: 12px;
+            gap: 10px;
             border-radius: 8px;
             transition: all 0.3s;
             text-decoration: none;
+            min-height: 44px;
         }
         
         .nav-link:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-link.active { background: var(--primary); color: white; }
+        .nav-icon { font-size: 18px; width: 22px; text-align: center; }
+        .nav-text { font-size: 13px; }
         
-        .nav-icon { font-size: 20px; width: 24px; text-align: center; }
-        .nav-text { font-size: 14px; }
-        
-        /* Main Content */
         .main-content {
             flex: 1;
-            margin-left: var(--sidebar-width);
+            margin-left: 280px;
             min-height: 100vh;
         }
         
         .top-bar {
-            height: 70px;
+            height: 60px;
             background: white;
             padding: 0 20px;
             display: flex;
@@ -113,65 +109,29 @@
         }
         
         .top-bar-left { display: flex; align-items: center; gap: 15px; }
+        .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
+        .top-bar-title h1 { font-size: 20px; }
+        .top-bar-title p { font-size: 12px; color: #64748b; }
         
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
+        .top-bar-right { display: flex; align-items: center; gap: 12px; }
         
-        .top-bar-title h1 { font-size: 22px; }
-        .top-bar-title p { font-size: 13px; color: #64748b; }
-        
-        .top-bar-right { display: flex; align-items: center; gap: 15px; }
-        
-        /* Language Toggle */
-        .lang-toggle {
-            display: flex;
-            gap: 5px;
-            background: var(--light);
-            border-radius: 25px;
-            padding: 4px;
-        }
-        
+        .lang-toggle { display: flex; gap: 2px; background: var(--light); border-radius: 20px; padding: 3px; }
         .lang-btn {
-            padding: 8px 15px;
+            padding: 6px 12px;
             border: none;
             background: transparent;
-            border-radius: 20px;
+            border-radius: 16px;
             cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
+            font-size: 12px;
             transition: all 0.3s;
             font-family: inherit;
         }
+        .lang-btn.active { background: var(--primary); color: white; }
         
-        .lang-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .icon-btn {
-            background: none;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .user-profile {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            position: relative;
-        }
-        
+        .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; position: relative; }
         .user-avatar {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
@@ -179,12 +139,10 @@
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 18px;
         }
-        
         .user-info { display: flex; flex-direction: column; }
-        .user-name { font-weight: 600; font-size: 14px; }
-        .user-role { font-size: 12px; color: #64748b; }
+        .user-name { font-weight: 600; font-size: 13px; }
+        .user-role { font-size: 11px; color: #64748b; }
         
         .dropdown-menu {
             position: absolute;
@@ -193,27 +151,22 @@
             background: white;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 10px 0;
-            min-width: 200px;
+            padding: 8px 0;
+            min-width: 180px;
             display: none;
             z-index: 1000;
         }
-        
         .dropdown-menu.show { display: block; }
-        
         .dropdown-item {
-            padding: 12px 20px;
+            padding: 12px 16px;
             display: flex;
             align-items: center;
             gap: 10px;
             cursor: pointer;
-            transition: background 0.3s;
-            font-size: 14px;
+            font-size: 13px;
         }
-        
         .dropdown-item:hover { background: var(--light); }
         
-        /* Content Area */
         .content-area { padding: 20px; max-width: 1400px; margin: 0 auto; }
         
         .stats-grid {
@@ -240,7 +193,6 @@
             width: 4px;
             height: 100%;
         }
-        
         .stat-card.primary::before { background: var(--primary); }
         .stat-card.success::before { background: var(--success); }
         .stat-card.warning::before { background: var(--warning); }
@@ -254,16 +206,15 @@
             align-items: center;
             justify-content: center;
             font-size: 22px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        
         .stat-card.primary .stat-icon { background: rgba(37, 99, 235, 0.1); }
         .stat-card.success .stat-icon { background: rgba(16, 185, 129, 0.1); }
         .stat-card.warning .stat-icon { background: rgba(245, 158, 11, 0.1); }
         .stat-card.danger .stat-icon { background: rgba(239, 68, 68, 0.1); }
         
         .stat-value { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
-        .stat-label { font-size: 14px; color: #64748b; }
+        .stat-label { font-size: 13px; color: #64748b; }
         
         .card {
             background: white;
@@ -282,37 +233,27 @@
             flex-wrap: wrap;
             gap: 10px;
         }
-        
         .card-header h3 { font-size: 16px; }
         .card-body { padding: 15px 20px; }
         
-        .table-container { overflow-x: auto; }
-        .table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .table { width: 100%; border-collapse: collapse; min-width: 500px; }
         .table th {
             background: #f8fafc;
-            padding: 12px 15px;
+            padding: 12px;
             text-align: left;
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
-            font-weight: 600;
             border-bottom: 2px solid var(--border);
         }
-        
-        .table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
+        .table td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
         
         .badge {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 11px;
             display: inline-block;
         }
-        
         .badge-success { background: #d1fae5; color: #065f46; }
         .badge-warning { background: #fef3c7; color: #92400e; }
         .badge-danger { background: #fee2e2; color: #991b1b; }
@@ -324,21 +265,17 @@
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
-            font-weight: 500;
             transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
             font-family: inherit;
+            min-height: 40px;
         }
-        
         .btn:active { transform: scale(0.95); }
         .btn-primary { background: var(--primary); color: white; }
         .btn-success { background: var(--success); color: white; }
         .btn-danger { background: var(--danger); color: white; }
         .btn-warning { background: var(--warning); color: white; }
         .btn-secondary { background: #64748b; color: white; }
-        .btn-sm { padding: 6px 12px; font-size: 12px; }
+        .btn-sm { padding: 6px 12px; font-size: 12px; min-height: 30px; }
         
         .action-btn {
             padding: 6px 10px;
@@ -349,11 +286,8 @@
             margin: 0 2px;
             font-family: inherit;
         }
-        
         .action-edit { background: #dbeafe; color: #1e40af; }
         .action-delete { background: #fee2e2; color: #991b1b; }
-        .action-activate { background: #d1fae5; color: #065f46; }
-        .action-deactivate { background: #fef3c7; color: #92400e; }
         
         .modal {
             position: fixed;
@@ -367,7 +301,6 @@
             align-items: center;
             z-index: 2000;
         }
-        
         .modal-content {
             background: white;
             border-radius: 15px;
@@ -376,78 +309,52 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-        
         .modal-header {
             padding: 15px 20px;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 10;
         }
-        
         .modal-body { padding: 20px; }
-        
         .modal-footer {
             padding: 15px 20px;
             border-top: 1px solid var(--border);
             display: flex;
             justify-content: flex-end;
             gap: 10px;
-            position: sticky;
-            bottom: 0;
-            background: white;
         }
         
-        .form-group { margin-bottom: 18px; }
-        .form-label { display: block; margin-bottom: 6px; font-weight: 500; font-size: 14px; }
-        
+        .form-group { margin-bottom: 15px; }
+        .form-label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 13px; }
         .form-input {
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 14px;
             font-family: inherit;
         }
-        
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
+        .form-input:focus { outline: none; border-color: var(--primary); }
         .form-select {
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             border: 1px solid var(--border);
             border-radius: 8px;
             font-size: 14px;
-            background: white;
-            cursor: pointer;
             font-family: inherit;
         }
         
-        .toast-container {
-            position: fixed;
-            top: 15px;
-            right: 15px;
-            z-index: 4000;
-        }
-        
+        .toast-container { position: fixed; top: 15px; right: 15px; z-index: 4000; }
         .toast {
             padding: 12px 18px;
             margin-bottom: 10px;
             border-radius: 8px;
             color: white;
             animation: slideIn 0.3s;
-            font-size: 14px;
+            font-size: 13px;
             font-family: inherit;
         }
-        
         .toast-success { background: var(--success); }
         .toast-error { background: var(--danger); }
         .toast-warning { background: var(--warning); }
@@ -457,31 +364,23 @@
             to { transform: translateX(0); opacity: 1; }
         }
         
-        .loading-spinner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
-        }
-        
+        .loading-spinner { display: flex; justify-content: center; align-items: center; padding: 40px; }
         .spinner {
-            width: 40px;
-            height: 40px;
-            border: 4px solid var(--border);
+            width: 35px;
+            height: 35px;
+            border: 3px solid var(--border);
             border-top-color: var(--primary);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
-        
         @keyframes spin { to { transform: rotate(360deg); } }
         
         .quick-actions {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 10px;
             margin-bottom: 20px;
         }
-        
         .quick-action-btn {
             background: white;
             border: 2px solid var(--border);
@@ -490,15 +389,11 @@
             text-align: center;
             cursor: pointer;
             transition: all 0.3s;
+            min-height: 80px;
         }
-        
-        .quick-action-btn:active {
-            border-color: var(--primary);
-            transform: scale(0.95);
-        }
-        
+        .quick-action-btn:active { border-color: var(--primary); transform: scale(0.95); }
         .quick-action-icon { font-size: 28px; margin-bottom: 8px; }
-        .quick-action-label { font-weight: 500; font-size: 13px; }
+        .quick-action-label { font-size: 12px; font-weight: 500; }
         
         .sidebar-overlay {
             position: fixed;
@@ -510,7 +405,6 @@
             z-index: 999;
             display: none;
         }
-        
         .sidebar-overlay.show { display: block; }
         
         @media (max-width: 768px) {
@@ -518,13 +412,19 @@
             .sidebar.show { transform: translateX(0); }
             .main-content { margin-left: 0; }
             .menu-toggle { display: block; }
-            .top-bar { padding: 0 15px; height: 55px; }
-            .top-bar-title h1 { font-size: 18px; }
+            .top-bar { padding: 0 12px; height: 55px; }
+            .top-bar-title h1 { font-size: 16px; }
             .user-info { display: none; }
-            .content-area { padding: 15px; }
+            .content-area { padding: 12px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .stat-card { padding: 12px; }
+            .stat-value { font-size: 18px; }
+            .quick-actions { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+            .lang-btn { padding: 5px 8px; font-size: 10px; }
+        }
+        
+        @media (max-width: 480px) {
             .stats-grid { grid-template-columns: 1fr; }
-            .quick-actions { grid-template-columns: repeat(2, 1fr); }
-            .lang-btn { padding: 6px 10px; font-size: 12px; }
         }
     </style>
 </head>
@@ -537,40 +437,39 @@
                 <div class="sidebar-logo">🏪</div>
                 <div class="sidebar-title">
                     <h2 data-translate="storeName">ስማርት ስቶር</h2>
-                    <p data-translate="storeTagline">የእቃ አያያዝ ስርዓት</p>
+                    <p>SmartStore</p>
                 </div>
             </div>
             
-            <div class="sidebar-section" data-translate="main">ዋና</div>
+            <div class="sidebar-section">Main</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link active" data-page="dashboard"><span class="nav-icon">📊</span><span class="nav-text" data-translate="dashboard">ዳሽቦርድ</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="pos"><span class="nav-icon">🛒</span><span class="nav-text" data-translate="pos">የሽያጭ ነጥብ</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="pos"><span class="nav-icon">🛒</span><span class="nav-text">POS</span></a></li>
             </ul>
             
-            <div class="sidebar-section" data-translate="inventory">ክምችት</div>
+            <div class="sidebar-section">Inventory</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" data-page="products"><span class="nav-icon">📦</span><span class="nav-text" data-translate="products">ምርቶች</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="categories"><span class="nav-icon">🏷️</span><span class="nav-text" data-translate="categories">ምድቦች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="inventory"><span class="nav-icon">📋</span><span class="nav-text" data-translate="stock">ክምችት</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="inventory"><span class="nav-icon">📋</span><span class="nav-text">ክምችት</span></a></li>
             </ul>
             
-            <div class="sidebar-section" data-translate="sales">ሽያጭ</div>
+            <div class="sidebar-section">Sales</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" data-page="sales"><span class="nav-icon">💰</span><span class="nav-text" data-translate="salesHistory">ሽያጮች</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="expenses"><span class="nav-icon">💸</span><span class="nav-text" data-translate="expenses">ወጪዎች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="payments"><span class="nav-icon">💳</span><span class="nav-text" data-translate="payments">ክፍያዎች</span></a></li>
             </ul>
             
-            <div class="sidebar-section" data-translate="management">አስተዳደር</div>
+            <div class="sidebar-section">Management</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" data-page="customers"><span class="nav-icon">👥</span><span class="nav-text" data-translate="customers">ደንበኞች</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="suppliers"><span class="nav-icon">🚚</span><span class="nav-text" data-translate="suppliers">አቅራቢዎች</span></a></li>
-                <li class="nav-item" id="usersNavItem" style="display:none;"><a class="nav-link" data-page="users"><span class="nav-icon">👤</span><span class="nav-text" data-translate="users">ተጠቃሚዎች</span></a></li>
+                <li class="nav-item" id="usersNavItem" style="display:none;"><a class="nav-link" data-page="users"><span class="nav-icon">👤</span><span class="nav-text">ተጠቃሚዎች</span></a></li>
             </ul>
             
-            <div class="sidebar-section" data-translate="tools">መሳሪያዎች</div>
+            <div class="sidebar-section">Tools</div>
             <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" data-page="barcode"><span class="nav-icon">📷</span><span class="nav-text" data-translate="barcode">ባርኮድ ስካነር</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="barcode"><span class="nav-icon">📷</span><span class="nav-text">ባርኮድ</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="email"><span class="nav-icon">📧</span><span class="nav-text" data-translate="email">ኢሜይል</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="reports"><span class="nav-icon">📈</span><span class="nav-text" data-translate="reports">ሪፖርቶች</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="settings"><span class="nav-icon">⚙️</span><span class="nav-text" data-translate="settings">ቅንብሮች</span></a></li>
@@ -582,15 +481,15 @@
                 <div class="top-bar-left">
                     <button class="menu-toggle" onclick="openSidebar()">☰</button>
                     <div class="top-bar-title">
-                        <h1 id="pageTitle" data-translate="dashboard">ዳሽቦርድ</h1>
-                        <p id="pageSubtitle">እንኳን ደህና መጡ!</p>
+                        <h1 id="pageTitle">ዳሽቦርድ</h1>
+                        <p id="pageSubtitle">Welcome</p>
                     </div>
                 </div>
                 
                 <div class="top-bar-right">
                     <div class="lang-toggle">
-                        <button class="lang-btn active" onclick="setLanguage('am')">አማርኛ</button>
-                        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+                        <button class="lang-btn active" onclick="setLanguage('am')">አማ</button>
+                        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
                     </div>
                     
                     <div class="user-profile" onclick="toggleUserDropdown()">
@@ -600,8 +499,8 @@
                             <span class="user-role" id="userRole"></span>
                         </div>
                         <div class="dropdown-menu" id="userDropdown">
-                            <div class="dropdown-item" onclick="showChangePassword()">🔑 <span data-translate="changePassword">የይለፍ ቃል ቀይር</span></div>
-                            <div class="dropdown-item" onclick="logout()">🚪 <span data-translate="logout">ውጣ</span></div>
+                            <div class="dropdown-item" onclick="showChangePassword()">🔑 Change Password</div>
+                            <div class="dropdown-item" onclick="logout()">🚪 Logout</div>
                         </div>
                     </div>
                 </div>
@@ -618,191 +517,45 @@
     <div class="toast-container" id="toastContainer"></div>
 
     <script>
-        // ============ ቋንቋ ትርጉሞች ============
+        // ============ TRANSLATIONS ============
         const translations = {
             am: {
-                storeName: 'ስማርት ስቶር',
-                storeTagline: 'የእቃ አያያዝ ስርዓት',
-                main: 'ዋና',
-                dashboard: 'ዳሽቦርድ',
-                pos: 'የሽያጭ ነጥብ',
-                inventory: 'ክምችት',
-                products: 'ምርቶች',
-                categories: 'ምድቦች',
-                stock: 'ክምችት',
-                sales: 'ሽያጭ',
-                salesHistory: 'ሽያጮች',
-                expenses: 'ወጪዎች',
-                payments: 'ክፍያዎች',
-                management: 'አስተዳደር',
-                customers: 'ደንበኞች',
-                suppliers: 'አቅራቢዎች',
-                users: 'ተጠቃሚዎች',
-                tools: 'መሳሪያዎች',
-                barcode: 'ባርኮድ ስካነር',
-                email: 'ኢሜይል',
-                reports: 'ሪፖርቶች',
-                settings: 'ቅንብሮች',
-                logout: 'ውጣ',
-                changePassword: 'የይለፍ ቃል ቀይር',
-                totalRevenue: 'ጠቅላላ ገቢ',
-                totalProducts: 'ጠቅላላ ምርቶች',
-                lowStock: 'ዝቅተኛ ክምችት',
-                totalCustomers: 'ደንበኞች',
-                addProduct: 'ምርት ጨምር',
-                addCustomer: 'ደንበኛ ጨምር',
-                addSupplier: 'አቅራቢ ጨምር',
-                addExpense: 'ወጪ ጨምር',
-                addCategory: 'ምድብ ጨምር',
-                addUser: 'ተጠቃሚ ጨምር',
-                edit: 'አርትዕ',
-                delete: 'ሰርዝ',
-                save: 'አስቀምጥ',
-                cancel: 'ይቅር',
-                close: 'ዝጋ',
-                search: 'ፈልግ',
-                send: 'ላክ',
-                process: 'አካሂድ',
-                activate: 'አንቃ',
-                deactivate: 'አቦዝን',
-                active: 'ንቁ',
-                inactive: 'እንቅስቃሴ አልባ',
-                inStock: 'በክምችት ላይ',
-                lowStockStatus: 'ዝቅተኛ',
-                outOfStock: 'አልቋል',
-                productName: 'የምርት ስም',
-                sku: 'SKU',
-                price: 'ዋጋ',
-                stock: 'ክምችት',
-                status: 'ሁኔታ',
-                actions: 'እርምጃ',
-                noProducts: 'ምርቶች የሉም',
-                noCustomers: 'ደንበኞች የሉም',
-                noSuppliers: 'አቅራቢዎች የሉም',
-                noExpenses: 'ወጪዎች የሉም',
-                noSales: 'ሽያጮች የሉም',
-                welcome: 'እንኳን ደህና መጡ!',
-                name: 'ስም',
-                emailAddress: 'ኢሜይል አድራሻ',
-                phone: 'ስልክ',
-                role: 'ሚና',
-                password: 'የይለፍ ቃል',
-                currentPassword: 'የአሁኑ የይለፍ ቃል',
-                newPassword: 'አዲስ የይለፍ ቃል',
-                confirmPassword: 'አዲሱን የይለፍ ቃል ያረጋግጡ',
-                admin: 'አስተዳዳሪ',
-                manager: 'ሥራ አስኪያጅ',
-                cashier: 'ሒሳብ ባለሙያ',
-                description: 'መግለጫ',
-                amount: 'መጠን',
-                category: 'ምድብ',
-                date: 'ቀን',
-                orderNumber: 'ትዕዛዝ ቁጥር',
-                total: 'ጠቅላላ',
-                paymentMethod: 'የክፍያ ዘዴ',
-                quantity: 'ብዛት',
-                reorderLevel: 'ማዘዣ ደረጃ',
-                costPrice: 'ወጪ ዋጋ',
-                sellingPrice: 'ሽያጭ ዋጋ',
-                lowStockAlert: 'ዝቅተኛ ክምችት ማስጠንቀቂያ',
-                sendEmail: 'ኢሜይል ላክ',
-                scanBarcode: 'ባርኮድ ቃኝ',
-                processPayment: 'ክፍያ አካሂድ',
-                viewAll: 'ሁሉንም ይመልከቱ',
-                recentProducts: 'የቅርብ ጊዜ ምርቶች',
-                lowStockProducts: 'ዝቅተኛ ክምችት ያላቸው ምርቶች'
+                dashboard: 'ዳሽቦርድ', products: 'ምርቶች', categories: 'ምድቦች',
+                salesHistory: 'ሽያጮች', expenses: 'ወጪዎች', customers: 'ደንበኞች',
+                suppliers: 'አቅራቢዎች', email: 'ኢሜይል', reports: 'ሪፖርቶች',
+                settings: 'ቅንብሮች', logout: 'ውጣ', totalRevenue: 'ጠቅላላ ገቢ',
+                totalProducts: 'ጠቅላላ ምርቶች', lowStock: 'ዝቅተኛ ክምችት',
+                totalCustomers: 'ደንበኞች', addProduct: 'ምርት ጨምር',
+                addCustomer: 'ደንበኛ ጨምር', addSupplier: 'አቅራቢ ጨምር',
+                addExpense: 'ወጪ ጨምር', edit: 'አርትዕ', delete: 'ሰርዝ',
+                save: 'አስቀምጥ', cancel: 'ይቅር', close: 'ዝጋ',
+                productName: 'የምርት ስም', price: 'ዋጋ', stock: 'ክምችት',
+                status: 'ሁኔታ', actions: 'እርምጃ', inStock: 'በክምችት ላይ',
+                lowStockStatus: 'ዝቅተኛ', outOfStock: 'አልቋል',
+                sendEmail: 'ኢሜይል ላክ', lowStockAlert: 'ዝቅተኛ ክምችት ማስጠንቀቂያ',
+                viewAll: 'ሁሉንም ይመልከቱ', recentProducts: 'የቅርብ ጊዜ ምርቶች',
+                name: 'ስም', emailAddress: 'ኢሜይል', phone: 'ስልክ',
+                role: 'ሚና', password: 'የይለፍ ቃል', description: 'መግለጫ',
+                amount: 'መጠን', quantity: 'ብዛት'
             },
             en: {
-                storeName: 'SmartStore',
-                storeTagline: 'Inventory Management System',
-                main: 'Main',
-                dashboard: 'Dashboard',
-                pos: 'Point of Sale',
-                inventory: 'Inventory',
-                products: 'Products',
-                categories: 'Categories',
-                stock: 'Stock',
-                sales: 'Sales',
-                salesHistory: 'Sales History',
-                expenses: 'Expenses',
-                payments: 'Payments',
-                management: 'Management',
-                customers: 'Customers',
-                suppliers: 'Suppliers',
-                users: 'Users',
-                tools: 'Tools',
-                barcode: 'Barcode Scanner',
-                email: 'Email',
-                reports: 'Reports',
-                settings: 'Settings',
-                logout: 'Logout',
-                changePassword: 'Change Password',
-                totalRevenue: 'Total Revenue',
-                totalProducts: 'Total Products',
-                lowStock: 'Low Stock',
-                totalCustomers: 'Customers',
-                addProduct: 'Add Product',
-                addCustomer: 'Add Customer',
-                addSupplier: 'Add Supplier',
-                addExpense: 'Add Expense',
-                addCategory: 'Add Category',
-                addUser: 'Add User',
-                edit: 'Edit',
-                delete: 'Delete',
-                save: 'Save',
-                cancel: 'Cancel',
-                close: 'Close',
-                search: 'Search',
-                send: 'Send',
-                process: 'Process',
-                activate: 'Activate',
-                deactivate: 'Deactivate',
-                active: 'Active',
-                inactive: 'Inactive',
-                inStock: 'In Stock',
-                lowStockStatus: 'Low Stock',
-                outOfStock: 'Out of Stock',
-                productName: 'Product Name',
-                sku: 'SKU',
-                price: 'Price',
-                stock: 'Stock',
-                status: 'Status',
-                actions: 'Actions',
-                noProducts: 'No products',
-                noCustomers: 'No customers',
-                noSuppliers: 'No suppliers',
-                noExpenses: 'No expenses',
-                noSales: 'No sales',
-                welcome: 'Welcome back!',
-                name: 'Name',
-                emailAddress: 'Email Address',
-                phone: 'Phone',
-                role: 'Role',
-                password: 'Password',
-                currentPassword: 'Current Password',
-                newPassword: 'New Password',
-                confirmPassword: 'Confirm Password',
-                admin: 'Admin',
-                manager: 'Manager',
-                cashier: 'Cashier',
-                description: 'Description',
-                amount: 'Amount',
-                category: 'Category',
-                date: 'Date',
-                orderNumber: 'Order #',
-                total: 'Total',
-                paymentMethod: 'Payment Method',
-                quantity: 'Quantity',
-                reorderLevel: 'Reorder Level',
-                costPrice: 'Cost Price',
-                sellingPrice: 'Selling Price',
-                lowStockAlert: 'Low Stock Alert',
-                sendEmail: 'Send Email',
-                scanBarcode: 'Scan Barcode',
-                processPayment: 'Process Payment',
-                viewAll: 'View All',
-                recentProducts: 'Recent Products',
-                lowStockProducts: 'Low Stock Products'
+                dashboard: 'Dashboard', products: 'Products', categories: 'Categories',
+                salesHistory: 'Sales', expenses: 'Expenses', customers: 'Customers',
+                suppliers: 'Suppliers', email: 'Email', reports: 'Reports',
+                settings: 'Settings', logout: 'Logout', totalRevenue: 'Total Revenue',
+                totalProducts: 'Total Products', lowStock: 'Low Stock',
+                totalCustomers: 'Customers', addProduct: 'Add Product',
+                addCustomer: 'Add Customer', addSupplier: 'Add Supplier',
+                addExpense: 'Add Expense', edit: 'Edit', delete: 'Delete',
+                save: 'Save', cancel: 'Cancel', close: 'Close',
+                productName: 'Product Name', price: 'Price', stock: 'Stock',
+                status: 'Status', actions: 'Actions', inStock: 'In Stock',
+                lowStockStatus: 'Low Stock', outOfStock: 'Out of Stock',
+                sendEmail: 'Send Email', lowStockAlert: 'Low Stock Alert',
+                viewAll: 'View All', recentProducts: 'Recent Products',
+                name: 'Name', emailAddress: 'Email', phone: 'Phone',
+                role: 'Role', password: 'Password', description: 'Description',
+                amount: 'Amount', quantity: 'Quantity'
             }
         };
         
@@ -811,9 +564,7 @@
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('lang', lang);
-            
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            
             if (lang === 'am') {
                 document.querySelectorAll('.lang-btn')[0].classList.add('active');
                 document.documentElement.lang = 'am';
@@ -821,79 +572,42 @@
                 document.querySelectorAll('.lang-btn')[1].classList.add('active');
                 document.documentElement.lang = 'en';
             }
-            
             applyTranslations();
-            
-            // የአሁኑን ገጽ እንደገና ይጫኑ
             const activePage = document.querySelector('.nav-link.active')?.getAttribute('data-page');
-            if (activePage) {
-                loadPage(activePage);
-            }
+            if (activePage) loadPage(activePage);
         }
         
         function applyTranslations() {
-            const t = translations[currentLang];
-            
             document.querySelectorAll('[data-translate]').forEach(el => {
                 const key = el.getAttribute('data-translate');
-                if (t[key]) {
-                    el.textContent = t[key];
-                }
+                if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
             });
-            
-            document.getElementById('pageSubtitle').textContent = t.welcome;
+            document.getElementById('pageSubtitle').textContent = currentLang === 'am' ? 'እንኳን ደህና መጡ!' : 'Welcome!';
         }
         
-        function t(key) {
-            return translations[currentLang][key] || key;
-        }
+        function t(key) { return translations[currentLang][key] || key; }
         
         function formatBirr(amount) {
-            return 'ብር ' + Number(amount).toLocaleString('en-US', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
+            return 'ብር ' + Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         }
         
-        // ============ ማስጀመሪያ ============
+        // ============ AUTH ============
         const authToken = localStorage.getItem('authToken');
         const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
         
-        if (!authToken || !currentUser) {
-            window.location.href = '/login';
-        }
+        if (!authToken || !currentUser) { window.location.href = '/login'; }
         
         document.getElementById('userName').textContent = currentUser.name;
-        document.getElementById('userRole').textContent = currentLang === 'am' ? getRoleInAmharic(currentUser.role) : currentUser.role;
+        document.getElementById('userRole').textContent = currentUser.role;
         document.getElementById('userAvatar').textContent = currentUser.name.charAt(0);
+        if (currentUser.role === 'admin') document.getElementById('usersNavItem').style.display = 'block';
         
-        if (currentUser.role === 'admin') {
-            document.getElementById('usersNavItem').style.display = 'block';
-        }
-        
-        function getRoleInAmharic(role) {
-            const roles = { admin: 'አስተዳዳሪ', manager: 'ሥራ አስኪያጅ', cashier: 'ሒሳብ ባለሙያ' };
-            return roles[role] || role;
-        }
-        
-        function openSidebar() {
-            document.getElementById('sidebar').classList.add('show');
-            document.getElementById('sidebarOverlay').classList.add('show');
-        }
-        
-        function closeSidebar() {
-            document.getElementById('sidebar').classList.remove('show');
-            document.getElementById('sidebarOverlay').classList.remove('show');
-        }
-        
-        function toggleUserDropdown() {
-            document.getElementById('userDropdown').classList.toggle('show');
-        }
+        function openSidebar() { document.getElementById('sidebar').classList.add('show'); document.getElementById('sidebarOverlay').classList.add('show'); }
+        function closeSidebar() { document.getElementById('sidebar').classList.remove('show'); document.getElementById('sidebarOverlay').classList.remove('show'); }
+        function toggleUserDropdown() { document.getElementById('userDropdown').classList.toggle('show'); }
         
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.user-profile')) {
-                document.getElementById('userDropdown').classList.remove('show');
-            }
+            if (!e.target.closest('.user-profile')) document.getElementById('userDropdown').classList.remove('show');
         });
         
         function showToast(message, type = 'success') {
@@ -906,72 +620,33 @@
         }
         
         function showLoading() {
-            document.getElementById('contentArea').innerHTML = `
-                <div class="loading-spinner"><div class="spinner"></div></div>
-            `;
+            document.getElementById('contentArea').innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
         }
         
-        function showModal(html) {
-            document.getElementById('modalContent').innerHTML = html;
-            document.getElementById('modal').style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-        
-        function logout() {
-            localStorage.removeItem('authToken');
-            localStorage.removeItem('currentUser');
-            window.location.href = '/';
-        }
+        function showModal(html) { document.getElementById('modalContent').innerHTML = html; document.getElementById('modal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
+        function logout() { localStorage.removeItem('authToken'); localStorage.removeItem('currentUser'); window.location.href = '/'; }
         
         async function apiRequest(endpoint, method = 'GET', data = null) {
-            const headers = {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${authToken}`
-            };
+            const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` };
             const config = { method, headers };
             if (data) config.body = JSON.stringify(data);
-            
             try {
                 const response = await fetch(`/api${endpoint}`, config);
                 if (response.status === 401) { logout(); throw new Error('Session expired'); }
                 const result = await response.json();
                 if (!response.ok) throw new Error(result.message || 'Request failed');
                 return result;
-            } catch (error) {
-                showToast(error.message, 'error');
-                throw error;
-            }
+            } catch (error) { showToast(error.message, 'error'); throw error; }
         }
         
-        // ============ አሰሳ ============
+        // ============ NAVIGATION ============
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
                 const page = this.getAttribute('data-page');
                 document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
                 this.classList.add('active');
-                
-                const pageTitles = {
-                    dashboard: { am: 'ዳሽቦርድ', en: 'Dashboard' },
-                    pos: { am: 'የሽያጭ ነጥብ', en: 'Point of Sale' },
-                    products: { am: 'ምርቶች', en: 'Products' },
-                    categories: { am: 'ምድቦች', en: 'Categories' },
-                    inventory: { am: 'ክምችት', en: 'Inventory' },
-                    sales: { am: 'ሽያጮች', en: 'Sales' },
-                    expenses: { am: 'ወጪዎች', en: 'Expenses' },
-                    payments: { am: 'ክፍያዎች', en: 'Payments' },
-                    customers: { am: 'ደንበኞች', en: 'Customers' },
-                    suppliers: { am: 'አቅራቢዎች', en: 'Suppliers' },
-                    users: { am: 'ተጠቃሚዎች', en: 'Users' },
-                    barcode: { am: 'ባርኮድ ስካነር', en: 'Barcode Scanner' },
-                    email: { am: 'ኢሜይል', en: 'Email' },
-                    reports: { am: 'ሪፖርቶች', en: 'Reports' },
-                    settings: { am: 'ቅንብሮች', en: 'Settings' }
-                };
-                
-                document.getElementById('pageTitle').textContent = pageTitles[page][currentLang];
+                document.getElementById('pageTitle').textContent = t(page) || page;
                 loadPage(page);
                 closeSidebar();
             });
@@ -987,11 +662,10 @@
                     case 'inventory': await loadInventory(); break;
                     case 'sales': await loadSales(); break;
                     case 'expenses': await loadExpenses(); break;
-                    case 'payments': await loadPayments(); break;
                     case 'customers': await loadCustomers(); break;
                     case 'suppliers': await loadSuppliers(); break;
                     case 'users': await loadUsers(); break;
-                    case 'barcode': await loadBarcodeScanner(); break;
+                    case 'barcode': await loadBarcode(); break;
                     case 'email': await loadEmailPage(); break;
                     case 'reports': await loadReports(); break;
                     case 'settings': await loadSettings(); break;
@@ -1002,114 +676,73 @@
             }
         }
         
-        // ============ ዳሽቦርድ ============
+        // ============ DASHBOARD ============
         async function loadDashboard() {
-            try {
-                const [products, sales, customers, inventory] = await Promise.all([
-                    apiRequest('/products'), apiRequest('/sales'), apiRequest('/customers'), apiRequest('/inventory')
-                ]);
+            const [products, sales, customers] = await Promise.all([
+                apiRequest('/products'), apiRequest('/sales'), apiRequest('/customers')
+            ]);
+            const totalRevenue = sales.data.reduce((s, sale) => s + sale.total, 0);
+            
+            document.getElementById('contentArea').innerHTML = `
+                <div class="quick-actions">
+                    <div class="quick-action-btn" onclick="loadPage('barcode')"><div class="quick-action-icon">📷</div><div class="quick-action-label">Barcode</div></div>
+                    <div class="quick-action-btn" onclick="loadPage('email')"><div class="quick-action-icon">📧</div><div class="quick-action-label">${t('email')}</div></div>
+                    <div class="quick-action-btn" onclick="loadPage('products')"><div class="quick-action-icon">📦</div><div class="quick-action-label">${t('products')}</div></div>
+                    <div class="quick-action-btn" onclick="loadPage('reports')"><div class="quick-action-icon">📈</div><div class="quick-action-label">${t('reports')}</div></div>
+                </div>
                 
-                const totalRevenue = sales.data.reduce((s, sale) => s + sale.total, 0);
+                <div class="stats-grid">
+                    <div class="stat-card primary"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(totalRevenue)}</div><div class="stat-label">${t('totalRevenue')}</div></div>
+                    <div class="stat-card success"><div class="stat-icon">📦</div><div class="stat-value">${products.data.length}</div><div class="stat-label">${t('totalProducts')}</div></div>
+                    <div class="stat-card warning"><div class="stat-icon">⚠️</div><div class="stat-value">${products.data.filter(p => p.quantity <= p.reorderLevel).length}</div><div class="stat-label">${t('lowStock')}</div></div>
+                    <div class="stat-card danger"><div class="stat-icon">👥</div><div class="stat-value">${customers.data.length}</div><div class="stat-label">${t('totalCustomers')}</div></div>
+                </div>
                 
-                document.getElementById('contentArea').innerHTML = `
-                    <div class="quick-actions">
-                        <div class="quick-action-btn" onclick="loadPage('barcode')">
-                            <div class="quick-action-icon">📷</div>
-                            <div class="quick-action-label">${t('scanBarcode')}</div>
-                        </div>
-                        <div class="quick-action-btn" onclick="loadPage('email')">
-                            <div class="quick-action-icon">📧</div>
-                            <div class="quick-action-label">${t('sendEmail')}</div>
-                        </div>
-                        <div class="quick-action-btn" onclick="loadPage('payments')">
-                            <div class="quick-action-icon">💳</div>
-                            <div class="quick-action-label">${t('processPayment')}</div>
-                        </div>
-                        <div class="quick-action-btn" onclick="loadPage('products')">
-                            <div class="quick-action-icon">📦</div>
-                            <div class="quick-action-label">${t('addProduct')}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card primary">
-                            <div class="stat-icon">💰</div>
-                            <div class="stat-value">${formatBirr(totalRevenue)}</div>
-                            <div class="stat-label">${t('totalRevenue')}</div>
-                        </div>
-                        <div class="stat-card success">
-                            <div class="stat-icon">📦</div>
-                            <div class="stat-value">${products.data.length}</div>
-                            <div class="stat-label">${t('totalProducts')}</div>
-                        </div>
-                        <div class="stat-card warning">
-                            <div class="stat-icon">⚠️</div>
-                            <div class="stat-value">${inventory.data.lowStock}</div>
-                            <div class="stat-label">${t('lowStock')}</div>
-                        </div>
-                        <div class="stat-card danger">
-                            <div class="stat-icon">👥</div>
-                            <div class="stat-value">${customers.data.length}</div>
-                            <div class="stat-label">${t('totalCustomers')}</div>
+                <div class="card">
+                    <div class="card-header"><h3>${t('recentProducts')}</h3><button class="btn btn-primary btn-sm" onclick="loadPage('products')">${t('viewAll')}</button></div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('status')}</th></tr></thead>
+                                <tbody>
+                                    ${products.data.slice(0, 5).map(p => `
+                                        <tr>
+                                            <td><strong>${p.name}</strong></td>
+                                            <td>${formatBirr(p.price)}</td>
+                                            <td>${p.quantity}</td>
+                                            <td><span class="badge ${p.stockStatus === 'in-stock' ? 'badge-success' : p.stockStatus === 'low-stock' ? 'badge-warning' : 'badge-danger'}">${t(p.stockStatus === 'in-stock' ? 'inStock' : p.stockStatus === 'low-stock' ? 'lowStockStatus' : 'outOfStock')}</span></td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                    
-                    <div class="card">
-                        <div class="card-header">
-                            <h3>${t('recentProducts')}</h3>
-                            <button class="btn btn-primary btn-sm" onclick="loadPage('products')">${t('viewAll')}</button>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-container">
-                                <table class="table">
-                                    <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('status')}</th></tr></thead>
-                                    <tbody>
-                                        ${products.data.slice(0, 5).map(p => `
-                                            <tr>
-                                                <td><strong>${p.name}</strong></td>
-                                                <td>${formatBirr(p.price)}</td>
-                                                <td>${p.quantity}</td>
-                                                <td><span class="badge ${p.stockStatus === 'in-stock' ? 'badge-success' : p.stockStatus === 'low-stock' ? 'badge-warning' : 'badge-danger'}">${p.stockStatus === 'in-stock' ? t('inStock') : p.stockStatus === 'low-stock' ? t('lowStockStatus') : t('outOfStock')}</span></td>
-                                            </tr>
-                                        `).join('')}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } catch (error) {
-                showToast(error.message, 'error');
-            }
+                </div>
+            `;
         }
         
-        // ============ ምርቶች ============
+        // ============ PRODUCTS ============
         async function loadProducts() {
             const result = await apiRequest('/products');
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
-                    <div class="card-header">
-                        <h3>${t('products')} (${result.data.length})</h3>
-                        <button class="btn btn-primary btn-sm" onclick="showAddProduct()">+ ${t('addProduct')}</button>
-                    </div>
+                    <div class="card-header"><h3>${t('products')} (${result.data.length})</h3><button class="btn btn-primary btn-sm" onclick="showAddProduct()">+ ${t('addProduct')}</button></div>
                     <div class="card-body">
                         <div class="table-container">
                             <table class="table">
-                                <thead><tr><th>${t('productName')}</th><th>${t('sku')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('status')}</th><th>${t('actions')}</th></tr></thead>
+                                <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('actions')}</th></tr></thead>
                                 <tbody>
                                     ${result.data.map(p => `
                                         <tr>
-                                            <td><strong>${p.name}</strong></td>
-                                            <td>${p.sku}</td>
+                                            <td><strong>${p.name}</strong><br><small>${p.sku}</small></td>
                                             <td>${formatBirr(p.price)}</td>
                                             <td>${p.quantity}</td>
-                                            <td><span class="badge ${p.stockStatus === 'in-stock' ? 'badge-success' : 'badge-warning'}">${p.stockStatus}</span></td>
                                             <td>
-                                                <button class="action-btn action-edit" onclick="showEditProduct('${p.id}')">✏️ ${t('edit')}</button>
-                                                <button class="action-btn action-delete" onclick="deleteProduct('${p.id}')">🗑️ ${t('delete')}</button>
+                                                <button class="action-btn action-edit" onclick="showEditProduct('${p.id}')">✏️</button>
+                                                <button class="action-btn action-delete" onclick="deleteProduct('${p.id}')">🗑️</button>
                                             </td>
                                         </tr>
-                                    `).join('') || `<tr><td colspan="6">${t('noProducts')}</td></tr>`}
+                                    `).join('') || '<tr><td colspan="4">No products</td></tr>'}
                                 </tbody>
                             </table>
                         </div>
@@ -1123,15 +756,11 @@
                 <div class="modal-header"><h3>${t('addProduct')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
                 <div class="modal-body">
                     <div class="form-group"><label class="form-label">${t('productName')} *</label><input type="text" id="prodName" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('sku')} *</label><input type="text" id="prodSku" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('sellingPrice')} (ብር) *</label><input type="number" id="prodPrice" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('costPrice')} (ብር) *</label><input type="number" id="prodCost" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">SKU *</label><input type="text" id="prodSku" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">${t('price')} (ብር) *</label><input type="number" id="prodPrice" class="form-input"></div>
                     <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="0"></div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button>
-                    <button class="btn btn-primary" onclick="saveProduct()">${t('save')}</button>
-                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="saveProduct()">${t('save')}</button></div>
             `);
         }
         
@@ -1140,77 +769,152 @@
                 name: document.getElementById('prodName').value,
                 sku: document.getElementById('prodSku').value,
                 price: parseFloat(document.getElementById('prodPrice').value),
-                costPrice: parseFloat(document.getElementById('prodCost').value),
+                costPrice: parseFloat(document.getElementById('prodPrice').value) * 0.7,
                 quantity: parseInt(document.getElementById('prodQty').value),
                 reorderLevel: 10
             };
             if (!data.name || !data.sku) { showToast('Name and SKU required', 'error'); return; }
-            try {
-                await apiRequest('/products', 'POST', data);
-                showToast('Product added!');
-                closeModal();
-                loadProducts();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest('/products', 'POST', data);
+            showToast('Product added!');
+            closeModal();
+            loadProducts();
         }
         
         async function showEditProduct(id) {
             const result = await apiRequest('/products');
             const p = result.data.find(x => x.id === id);
             showModal(`
-                <div class="modal-header"><h3>${t('edit')} ${t('products')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-header"><h3>${t('edit')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
                 <div class="modal-body">
                     <div class="form-group"><label class="form-label">${t('productName')}</label><input type="text" id="prodName" class="form-input" value="${p.name}"></div>
-                    <div class="form-group"><label class="form-label">${t('sku')}</label><input type="text" id="prodSku" class="form-input" value="${p.sku}"></div>
                     <div class="form-group"><label class="form-label">${t('price')} (ብር)</label><input type="number" id="prodPrice" class="form-input" value="${p.price}"></div>
                     <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="${p.quantity}"></div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button>
-                    <button class="btn btn-primary" onclick="updateProduct('${id}')">${t('save')}</button>
-                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="updateProduct('${id}')">${t('save')}</button></div>
             `);
         }
         
         async function updateProduct(id) {
             const data = {
                 name: document.getElementById('prodName').value,
-                sku: document.getElementById('prodSku').value,
                 price: parseFloat(document.getElementById('prodPrice').value),
                 quantity: parseInt(document.getElementById('prodQty').value)
             };
-            try {
-                await apiRequest(`/products/${id}`, 'PUT', data);
-                showToast('Product updated!');
-                closeModal();
-                loadProducts();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest(`/products/${id}`, 'PUT', data);
+            showToast('Product updated!');
+            closeModal();
+            loadProducts();
         }
         
         async function deleteProduct(id) {
             if (!confirm('Delete this product?')) return;
-            try {
-                await apiRequest(`/products/${id}`, 'DELETE');
-                showToast('Product deleted!');
-                loadProducts();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest(`/products/${id}`, 'DELETE');
+            showToast('Product deleted!');
+            loadProducts();
         }
         
-        // ============ ባርኮድ ============
-        async function loadBarcodeScanner() {
+        // ============ EMAIL (FormSubmit.co - Works on Render) ============
+        async function loadEmailPage() {
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
-                    <div class="card-header"><h3>${t('barcode')}</h3></div>
+                    <div class="card-header"><h3>${t('sendEmail')} / ኢሜይል ላክ</h3></div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label class="form-label">${t('scanBarcode')}</label>
-                            <input type="text" id="barcodeInput" class="form-input" placeholder="Barcode..." autofocus>
-                        </div>
-                        <button class="btn btn-primary" onclick="scanBarcode(document.getElementById('barcodeInput').value)">🔍 ${t('search')}</button>
-                        <div id="barcodeResult" style="margin-top: 15px;"></div>
+                        <div class="form-group"><label class="form-label">To / ወደ *</label><input type="email" id="emailTo" class="form-input" placeholder="email@example.com"></div>
+                        <div class="form-group"><label class="form-label">Subject / ርዕስ *</label><input type="text" id="emailSubject" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">Message / መልእክት *</label><textarea id="emailText" class="form-input" rows="5"></textarea></div>
+                        <button class="btn btn-primary" onclick="sendEmail()">📧 ${t('sendEmail')}</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Quick Actions</h3></div>
+                    <div class="card-body"><button class="btn btn-warning" onclick="sendLowStockAlert()">⚠️ ${t('lowStockAlert')}</button></div>
+                </div>
+            `;
+        }
+        
+        async function sendEmail() {
+            const to = document.getElementById('emailTo').value;
+            const subject = document.getElementById('emailSubject').value;
+            const text = document.getElementById('emailText').value;
+            
+            if (!to || !subject || !text) { showToast('All fields required', 'error'); return; }
+            
+            showToast('Sending...', 'warning');
+            
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/hulgebmereja2017@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        email: to,
+                        subject: subject,
+                        message: text,
+                        _subject: 'SmartStore: ' + subject,
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
+                });
+                
+                const result = await response.json();
+                console.log('Email result:', result);
+                
+                if (result.success === 'true' || result.success === true) {
+                    showToast('✅ Email sent successfully!');
+                    loadEmailPage();
+                } else {
+                    showToast('Failed to send email', 'error');
+                }
+            } catch (error) {
+                console.error('Email error:', error);
+                showToast('Error: ' + error.message, 'error');
+            }
+        }
+        
+        async function sendLowStockAlert() {
+            const result = await apiRequest('/products');
+            const lowStock = result.data.filter(p => p.quantity <= p.reorderLevel);
+            
+            if (lowStock.length === 0) { showToast('No low stock products', 'warning'); return; }
+            
+            const message = lowStock.map(p => `${p.name}: ${p.quantity} remaining`).join('\n');
+            
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/hulgebmereja2017@gmail.com', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        email: 'hulgebmereja2017@gmail.com',
+                        subject: 'Low Stock Alert',
+                        message: message,
+                        _subject: 'SmartStore - Low Stock Alert',
+                        _template: 'table',
+                        _captcha: 'false'
+                    })
+                });
+                
+                const result = await response.json();
+                if (result.success === 'true' || result.success === true) {
+                    showToast('✅ Alert sent!');
+                } else {
+                    showToast('Failed to send alert', 'error');
+                }
+            } catch (error) {
+                showToast('Error: ' + error.message, 'error');
+            }
+        }
+        
+        // ============ BARCODE ============
+        async function loadBarcode() {
+            document.getElementById('contentArea').innerHTML = `
+                <div class="card">
+                    <div class="card-header"><h3>Barcode Scanner</h3></div>
+                    <div class="card-body">
+                        <div class="form-group"><label class="form-label">Scan or Enter Barcode</label><input type="text" id="barcodeInput" class="form-input" autofocus></div>
+                        <button class="btn btn-primary" onclick="scanBarcode(document.getElementById('barcodeInput').value)">🔍 Search</button>
+                        <div id="barcodeResult" style="margin-top:15px;"></div>
                     </div>
                 </div>
             `;
-            
             document.getElementById('barcodeInput').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') scanBarcode(this.value);
             });
@@ -1221,224 +925,37 @@
             if (!barcode) { showToast('Enter barcode', 'warning'); return; }
             try {
                 const result = await apiRequest(`/products/barcode/${barcode}`);
-                const product = result.data;
+                const p = result.data;
                 document.getElementById('barcodeResult').innerHTML = `
-                    <div class="card" style="margin:0; border: 2px solid var(--success);">
+                    <div class="card" style="border:2px solid var(--success);">
                         <div class="card-body">
                             <h4>✅ Found</h4>
-                            <p><strong>${product.name}</strong></p>
-                            <p>SKU: ${product.sku}</p>
-                            <p>${t('price')}: ${formatBirr(product.price)}</p>
-                            <p>${t('stock')}: ${product.quantity}</p>
+                            <p><strong>${p.name}</strong></p>
+                            <p>Price: ${formatBirr(p.price)}</p>
+                            <p>Stock: ${p.quantity}</p>
                         </div>
                     </div>
                 `;
-                showToast('Product found!');
             } catch (error) {
-                document.getElementById('barcodeResult').innerHTML = `<div class="card" style="margin:0; border: 2px solid var(--danger);"><div class="card-body"><p>❌ Not found: ${barcode}</p></div></div>`;
-                showToast('Product not found', 'error');
+                document.getElementById('barcodeResult').innerHTML = `<div class="card" style="border:2px solid var(--danger);"><div class="card-body"><p>❌ Not found: ${barcode}</p></div></div>`;
             }
         }
         
-        // ============ ኢሜይል ============
-        async function loadEmailPage() {
-            document.getElementById('contentArea').innerHTML = `
-                <div class="card">
-                    <div class="card-header"><h3>${t('sendEmail')}</h3></div>
-                    <div class="card-body">
-                        <div class="form-group"><label class="form-label">To *</label><input type="email" id="emailTo" class="form-input"></div>
-                        <div class="form-group"><label class="form-label">${t('subject') || 'Subject'} *</label><input type="text" id="emailSubject" class="form-input"></div>
-                        <div class="form-group"><label class="form-label">${t('message') || 'Message'} *</label><textarea id="emailText" class="form-input" rows="4"></textarea></div>
-                        <button class="btn btn-primary" onclick="sendEmail()">📧 ${t('send')}</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header"><h3>${t('quickActions') || 'Quick Actions'}</h3></div>
-                    <div class="card-body">
-                        <button class="btn btn-warning" onclick="sendLowStockAlert()">⚠️ ${t('lowStockAlert')}</button>
-                    </div>
-                </div>
-            `;
-        }
-        
-        async function sendEmail() {
-            const data = {
-                to: document.getElementById('emailTo').value,
-                subject: document.getElementById('emailSubject').value,
-                text: document.getElementById('emailText').value
-            };
-            if (!data.to || !data.subject || !data.text) { showToast('All fields required', 'error'); return; }
-            try {
-                await apiRequest('/email/send', 'POST', data);
-                showToast('Email sent!');
-                loadEmailPage();
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        async function sendLowStockAlert() {
-            try {
-                const result = await apiRequest('/email/low-stock-alert', 'POST');
-                showToast(result.message);
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        // ============ ክፍያዎች ============
-        async function loadPayments() {
-            document.getElementById('contentArea').innerHTML = `
-                <div class="card">
-                    <div class="card-header"><h3>${t('payments')}</h3></div>
-                    <div class="card-body">
-                        <div class="form-group"><label class="form-label">${t('amount')} (ብር)</label><input type="number" id="paymentAmount" class="form-input" placeholder="0.00"></div>
-                        <button class="btn btn-primary" onclick="processPayment()">💳 ${t('processPayment')}</button>
-                    </div>
-                </div>
-            `;
-        }
-        
-        async function processPayment() {
-            const amount = parseFloat(document.getElementById('paymentAmount').value);
-            if (!amount || amount <= 0) { showToast('Enter valid amount', 'error'); return; }
-            try {
-                const result = await apiRequest('/payment/stripe', 'POST', { amount, currency: 'ETB' });
-                showModal(`
-                    <div class="modal-header"><h3>${t('paymentCreated') || 'Payment Created'}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
-                    <div class="modal-body">
-                        <p>${t('amount')}: ${formatBirr(result.amount)}</p>
-                        <p>Client Secret: ${result.clientSecret.substring(0, 20)}...</p>
-                    </div>
-                    <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('close')}</button></div>
-                `);
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        // ============ ተጠቃሚዎች ============
-        async function loadUsers() {
-            if (currentUser.role !== 'admin') {
-                document.getElementById('contentArea').innerHTML = '<div class="card"><div class="card-body">Access denied</div></div>';
-                return;
-            }
-            const result = await apiRequest('/users');
-            document.getElementById('contentArea').innerHTML = `
-                <div class="card">
-                    <div class="card-header"><h3>${t('users')}</h3><button class="btn btn-primary btn-sm" onclick="showAddUser()">+ ${t('addUser')}</button></div>
-                    <div class="card-body">
-                        <div class="table-container">
-                            <table class="table">
-                                <thead><tr><th>${t('name')}</th><th>${t('role')}</th><th>${t('status')}</th><th>${t('actions')}</th></tr></thead>
-                                <tbody>
-                                    ${result.data.map(u => `
-                                        <tr>
-                                            <td><strong>${u.name}</strong><br><small>${u.email}</small></td>
-                                            <td>${currentLang === 'am' ? getRoleInAmharic(u.role) : u.role}</td>
-                                            <td><span class="badge ${u.active ? 'badge-success' : 'badge-danger'}">${u.active ? t('active') : t('inactive')}</span></td>
-                                            <td>
-                                                ${u.id !== currentUser.id ? `
-                                                    <button class="action-btn ${u.active ? 'action-deactivate' : 'action-activate'}" onclick="toggleUser('${u.id}', ${!u.active})">${u.active ? t('deactivate') : t('activate')}</button>
-                                                    <button class="action-btn action-delete" onclick="deleteUser('${u.id}')">🗑️</button>
-                                                ` : `<span class="badge badge-info">${currentLang === 'am' ? 'እርስዎ' : 'You'}</span>`}
-                                            </td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header"><h3>${t('changePassword')}</h3></div>
-                    <div class="card-body">
-                        <div class="form-group"><label class="form-label">${t('currentPassword')}</label><input type="password" id="currentPass" class="form-input"></div>
-                        <div class="form-group"><label class="form-label">${t('newPassword')}</label><input type="password" id="newPass" class="form-input"></div>
-                        <button class="btn btn-primary" onclick="changePassword()">${t('changePassword')}</button>
-                    </div>
-                </div>
-            `;
-        }
-        
-        function showAddUser() {
-            showModal(`
-                <div class="modal-header"><h3>${t('addUser')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
-                <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('name')} *</label><input type="text" id="newUserName" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('emailAddress')} *</label><input type="email" id="newUserEmail" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('password')} *</label><input type="password" id="newUserPass" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('role')}</label><select id="newUserRole" class="form-select"><option value="cashier">${t('cashier')}</option><option value="manager">${t('manager')}</option><option value="admin">${t('admin')}</option></select></div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="addUser()">${t('save')}</button></div>
-            `);
-        }
-        
-        async function addUser() {
-            const data = {
-                name: document.getElementById('newUserName').value,
-                email: document.getElementById('newUserEmail').value,
-                password: document.getElementById('newUserPass').value,
-                role: document.getElementById('newUserRole').value
-            };
-            if (!data.name || !data.email || !data.password) { showToast('All fields required', 'error'); return; }
-            try {
-                await apiRequest('/users', 'POST', data);
-                showToast('User created!');
-                closeModal();
-                loadUsers();
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        async function toggleUser(id, activate) {
-            const action = activate ? 'activate' : 'deactivate';
-            try {
-                await apiRequest(`/users/${id}/${action}`, 'PUT');
-                showToast(`User ${action}d!`);
-                loadUsers();
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        async function deleteUser(id) {
-            if (!confirm('Delete this user?')) return;
-            try {
-                await apiRequest(`/users/${id}`, 'DELETE');
-                showToast('User deleted!');
-                loadUsers();
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        async function changePassword() {
-            const currentPassword = document.getElementById('currentPass')?.value;
-            const newPassword = document.getElementById('newPass')?.value;
-            if (!currentPassword || !newPassword) { showToast('All fields required', 'error'); return; }
-            try {
-                await apiRequest('/auth/change-password', 'PUT', { currentPassword, newPassword });
-                showToast('Password changed!');
-            } catch (error) { showToast(error.message, 'error'); }
-        }
-        
-        function showChangePassword() {
-            toggleUserDropdown();
-            showModal(`
-                <div class="modal-header"><h3>${t('changePassword')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
-                <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('currentPassword')}</label><input type="password" id="currentPass" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('newPassword')}</label><input type="password" id="newPass" class="form-input"></div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="changePassword()">${t('changePassword')}</button></div>
-            `);
-        }
-        
-        // ============ ሌሎች ገጾች ============
+        // ============ CATEGORIES ============
         async function loadCategories() {
             const result = await apiRequest('/categories');
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
-                    <div class="card-header"><h3>${t('categories')}</h3><button class="btn btn-primary btn-sm" onclick="showAddCategory()">+ ${t('addCategory')}</button></div>
+                    <div class="card-header"><h3>${t('categories')}</h3><button class="btn btn-primary btn-sm" onclick="showAddCategory()">+ Add</button></div>
                     <div class="card-body">
                         ${result.data.map(c => `
                             <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
                                 <div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;">
-                                    <div><strong>${c.name}</strong><br><small>${c.productCount} ${t('products')}</small></div>
+                                    <div><strong>${c.name}</strong><br><small>${c.productCount} products</small></div>
                                     <button class="action-btn action-delete" onclick="deleteCategory('${c.id}')">🗑️</button>
                                 </div>
                             </div>
-                        `).join('') || `<p>${t('noProducts')}</p>`}
+                        `).join('') || '<p>No categories</p>'}
                     </div>
                 </div>
             `;
@@ -1446,9 +963,9 @@
         
         function showAddCategory() {
             showModal(`
-                <div class="modal-header"><h3>${t('addCategory')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-header"><h3>Add Category</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
                 <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('name')} *</label><input type="text" id="catName" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">Name *</label><input type="text" id="catName" class="form-input"></div>
                     <div class="form-group"><label class="form-label">${t('description')}</label><input type="text" id="catDesc" class="form-input"></div>
                 </div>
                 <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="saveCategory()">${t('save')}</button></div>
@@ -1458,57 +975,66 @@
         async function saveCategory() {
             const data = { name: document.getElementById('catName').value, description: document.getElementById('catDesc').value };
             if (!data.name) { showToast('Name required', 'error'); return; }
-            try {
-                await apiRequest('/categories', 'POST', data);
-                showToast('Category added!');
-                closeModal();
-                loadCategories();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest('/categories', 'POST', data);
+            showToast('Category added!');
+            closeModal();
+            loadCategories();
         }
         
         async function deleteCategory(id) {
             if (!confirm('Delete this category?')) return;
-            try {
-                await apiRequest(`/categories/${id}`, 'DELETE');
-                showToast('Category deleted!');
-                loadCategories();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest(`/categories/${id}`, 'DELETE');
+            showToast('Category deleted!');
+            loadCategories();
         }
         
+        // ============ INVENTORY ============
         async function loadInventory() {
             const result = await apiRequest('/inventory');
             const d = result.data;
             document.getElementById('contentArea').innerHTML = `
                 <div class="stats-grid">
-                    <div class="stat-card primary"><div class="stat-icon">📦</div><div class="stat-value">${d.totalProducts}</div><div class="stat-label">${t('products')}</div></div>
+                    <div class="stat-card primary"><div class="stat-icon">📦</div><div class="stat-value">${d.totalProducts}</div><div class="stat-label">${t('totalProducts')}</div></div>
                     <div class="stat-card success"><div class="stat-icon">📊</div><div class="stat-value">${d.totalQuantity}</div><div class="stat-label">${t('quantity')}</div></div>
-                    <div class="stat-card warning"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(d.totalValue)}</div><div class="stat-label">${t('stockValue') || 'Stock Value'}</div></div>
+                    <div class="stat-card warning"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(d.totalValue)}</div><div class="stat-label">Value</div></div>
                     <div class="stat-card danger"><div class="stat-icon">⚠️</div><div class="stat-value">${d.lowStock}</div><div class="stat-label">${t('lowStock')}</div></div>
                 </div>
-            `;
-        }
-        
-        async function loadSales() {
-            const result = await apiRequest('/sales');
-            const totalRevenue = result.data.reduce((s, sale) => s + sale.total, 0);
-            document.getElementById('contentArea').innerHTML = `
                 <div class="card">
-                    <div class="card-header"><h3>${t('salesHistory')}</h3><span class="badge badge-success">${formatBirr(totalRevenue)}</span></div>
+                    <div class="card-header"><h3>${t('lowStockAlert')}</h3></div>
                     <div class="card-body">
-                        ${result.data.map(s => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${s.orderNumber}</strong>
-                                    <br><small>${new Date(s.createdAt).toLocaleString()}</small>
-                                    <br><strong>${formatBirr(s.total)}</strong>
-                                </div>
+                        ${d.lowStockProducts.map(p => `
+                            <div class="card" style="margin-bottom:10px; border:1px solid var(--warning);">
+                                <div class="card-body" style="padding:12px;"><strong>${p.name}</strong><br><small>Stock: ${p.quantity} | Reorder: ${p.reorderLevel}</small></div>
                             </div>
-                        `).join('') || `<p>${t('noSales')}</p>`}
+                        `).join('') || '<p>No low stock items</p>'}
                     </div>
                 </div>
             `;
         }
         
+        // ============ SALES ============
+        async function loadSales() {
+            const result = await apiRequest('/sales');
+            const total = result.data.reduce((s, sale) => s + sale.total, 0);
+            document.getElementById('contentArea').innerHTML = `
+                <div class="card">
+                    <div class="card-header"><h3>${t('salesHistory')}</h3><span class="badge badge-success">${formatBirr(total)}</span></div>
+                    <div class="card-body">
+                        ${result.data.map(s => `
+                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
+                                <div class="card-body" style="padding:12px;">
+                                    <strong>${s.orderNumber}</strong><br>
+                                    <small>${new Date(s.createdAt).toLocaleString()}</small><br>
+                                    <strong>${formatBirr(s.total)}</strong>
+                                </div>
+                            </div>
+                        `).join('') || '<p>No sales</p>'}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // ============ EXPENSES ============
         async function loadExpenses() {
             const result = await apiRequest('/expenses');
             const total = result.data.reduce((s, e) => s + e.amount, 0);
@@ -1520,13 +1046,13 @@
                         ${result.data.map(e => `
                             <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
                                 <div class="card-body" style="padding:12px;">
-                                    <strong>${e.description}</strong>
-                                    <br><small>${e.category} | ${e.date || new Date(e.createdAt).toLocaleDateString()}</small>
-                                    <br><strong>${formatBirr(e.amount)}</strong>
-                                    <br><button class="action-btn action-delete" onclick="deleteExpense('${e.id}')">🗑️ ${t('delete')}</button>
+                                    <strong>${e.description}</strong><br>
+                                    <small>${e.category}</small><br>
+                                    <strong>${formatBirr(e.amount)}</strong><br>
+                                    <button class="action-btn action-delete" onclick="deleteExpense('${e.id}')">🗑️</button>
                                 </div>
                             </div>
-                        `).join('') || `<p>${t('noExpenses')}</p>`}
+                        `).join('') || '<p>No expenses</p>'}
                     </div>
                 </div>
             `;
@@ -1536,7 +1062,7 @@
             showModal(`
                 <div class="modal-header"><h3>${t('addExpense')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
                 <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('category')}</label><select id="expCategory" class="form-select"><option value="rent">Rent</option><option value="utilities">Utilities</option><option value="salaries">Salaries</option><option value="supplies">Supplies</option><option value="other">Other</option></select></div>
+                    <div class="form-group"><label class="form-label">Category</label><select id="expCategory" class="form-select"><option value="rent">Rent</option><option value="utilities">Utilities</option><option value="salaries">Salaries</option><option value="other">Other</option></select></div>
                     <div class="form-group"><label class="form-label">${t('description')} *</label><input type="text" id="expDesc" class="form-input"></div>
                     <div class="form-group"><label class="form-label">${t('amount')} (ብር) *</label><input type="number" id="expAmount" class="form-input"></div>
                 </div>
@@ -1545,25 +1071,22 @@
         }
         
         async function saveExpense() {
-            const data = { category: document.getElementById('expCategory').value, description: document.getElementById('expDesc').value, amount: parseFloat(document.getElementById('expAmount').value), date: new Date().toISOString().split('T')[0] };
+            const data = { category: document.getElementById('expCategory').value, description: document.getElementById('expDesc').value, amount: parseFloat(document.getElementById('expAmount').value) };
             if (!data.description || !data.amount) { showToast('Required fields missing', 'error'); return; }
-            try {
-                await apiRequest('/expenses', 'POST', data);
-                showToast('Expense added!');
-                closeModal();
-                loadExpenses();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest('/expenses', 'POST', data);
+            showToast('Expense added!');
+            closeModal();
+            loadExpenses();
         }
         
         async function deleteExpense(id) {
-            if (!confirm('Delete this expense?')) return;
-            try {
-                await apiRequest(`/expenses/${id}`, 'DELETE');
-                showToast('Expense deleted!');
-                loadExpenses();
-            } catch (error) { showToast(error.message, 'error'); }
+            if (!confirm('Delete?')) return;
+            await apiRequest(`/expenses/${id}`, 'DELETE');
+            showToast('Deleted!');
+            loadExpenses();
         }
         
+        // ============ CUSTOMERS ============
         async function loadCustomers() {
             const result = await apiRequest('/customers');
             document.getElementById('contentArea').innerHTML = `
@@ -1573,12 +1096,12 @@
                         ${result.data.map(c => `
                             <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
                                 <div class="card-body" style="padding:12px;">
-                                    <strong>${c.name}</strong>
-                                    <br><small>${c.email || 'No email'} | ${c.phone || 'No phone'}</small>
-                                    <br><button class="action-btn action-delete" onclick="deleteCustomer('${c.id}')">🗑️ ${t('delete')}</button>
+                                    <strong>${c.name}</strong><br>
+                                    <small>${c.email || 'No email'} | ${c.phone || 'No phone'}</small><br>
+                                    <button class="action-btn action-delete" onclick="deleteCustomer('${c.id}')">🗑️</button>
                                 </div>
                             </div>
-                        `).join('') || `<p>${t('noCustomers')}</p>`}
+                        `).join('') || '<p>No customers</p>'}
                     </div>
                 </div>
             `;
@@ -1599,23 +1122,20 @@
         async function saveCustomer() {
             const data = { name: document.getElementById('cusName').value, email: document.getElementById('cusEmail').value, phone: document.getElementById('cusPhone').value };
             if (!data.name) { showToast('Name required', 'error'); return; }
-            try {
-                await apiRequest('/customers', 'POST', data);
-                showToast('Customer added!');
-                closeModal();
-                loadCustomers();
-            } catch (error) { showToast(error.message, 'error'); }
+            await apiRequest('/customers', 'POST', data);
+            showToast('Customer added!');
+            closeModal();
+            loadCustomers();
         }
         
         async function deleteCustomer(id) {
-            if (!confirm('Delete this customer?')) return;
-            try {
-                await apiRequest(`/customers/${id}`, 'DELETE');
-                showToast('Customer deleted!');
-                loadCustomers();
-            } catch (error) { showToast(error.message, 'error'); }
+            if (!confirm('Delete?')) return;
+            await apiRequest(`/customers/${id}`, 'DELETE');
+            showToast('Deleted!');
+            loadCustomers();
         }
         
+        // ============ SUPPLIERS ============
         async function loadSuppliers() {
             const result = await apiRequest('/suppliers');
             document.getElementById('contentArea').innerHTML = `
@@ -1625,12 +1145,12 @@
                         ${result.data.map(s => `
                             <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
                                 <div class="card-body" style="padding:12px;">
-                                    <strong>${s.companyName}</strong>
-                                    <br><small>${s.contactPerson} | ${s.email || 'No email'}</small>
-                                    <br><button class="action-btn action-delete" onclick="deleteSupplier('${s.id}')">🗑️ ${t('delete')}</button>
+                                    <strong>${s.companyName}</strong><br>
+                                    <small>${s.contactPerson}</small><br>
+                                    <button class="action-btn action-delete" onclick="deleteSupplier('${s.id}')">🗑️</button>
                                 </div>
                             </div>
-                        `).join('') || `<p>${t('noSuppliers')}</p>`}
+                        `).join('') || '<p>No suppliers</p>'}
                     </div>
                 </div>
             `;
@@ -1651,47 +1171,134 @@
         
         async function saveSupplier() {
             const data = { companyName: document.getElementById('supCompany').value, contactPerson: document.getElementById('supContact').value, email: document.getElementById('supEmail').value, phone: document.getElementById('supPhone').value };
-            if (!data.companyName || !data.contactPerson) { showToast('Company and contact required', 'error'); return; }
-            try {
-                await apiRequest('/suppliers', 'POST', data);
-                showToast('Supplier added!');
-                closeModal();
-                loadSuppliers();
-            } catch (error) { showToast(error.message, 'error'); }
+            if (!data.companyName || !data.contactPerson) { showToast('Required', 'error'); return; }
+            await apiRequest('/suppliers', 'POST', data);
+            showToast('Supplier added!');
+            closeModal();
+            loadSuppliers();
         }
         
         async function deleteSupplier(id) {
-            if (!confirm('Delete this supplier?')) return;
-            try {
-                await apiRequest(`/suppliers/${id}`, 'DELETE');
-                showToast('Supplier deleted!');
-                loadSuppliers();
-            } catch (error) { showToast(error.message, 'error'); }
+            if (!confirm('Delete?')) return;
+            await apiRequest(`/suppliers/${id}`, 'DELETE');
+            showToast('Deleted!');
+            loadSuppliers();
         }
         
-        async function loadReports() {
-            const [sales, inventory, profitLoss] = await Promise.all([
-                apiRequest('/reports/sales'), apiRequest('/reports/inventory'), apiRequest('/reports/profit-loss')
-            ]);
+        // ============ USERS ============
+        async function loadUsers() {
+            if (currentUser.role !== 'admin') {
+                document.getElementById('contentArea').innerHTML = '<div class="card"><div class="card-body">Access denied</div></div>';
+                return;
+            }
+            const result = await apiRequest('/users');
             document.getElementById('contentArea').innerHTML = `
-                <div class="stats-grid">
-                    <div class="stat-card primary"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(sales.data.totalRevenue)}</div><div class="stat-label">${t('totalRevenue')}</div></div>
-                    <div class="stat-card success"><div class="stat-icon">📈</div><div class="stat-value">${sales.data.totalSales}</div><div class="stat-label">${t('salesHistory')}</div></div>
-                    <div class="stat-card warning"><div class="stat-icon">📦</div><div class="stat-value">${formatBirr(inventory.data.totalStockValue)}</div><div class="stat-label">${t('stockValue') || 'Stock Value'}</div></div>
-                    <div class="stat-card danger"><div class="stat-icon">💵</div><div class="stat-value">${formatBirr(profitLoss.data.netProfit)}</div><div class="stat-label">${t('netProfit') || 'Net Profit'}</div></div>
+                <div class="card">
+                    <div class="card-header"><h3>Users</h3><button class="btn btn-primary btn-sm" onclick="showAddUser()">+ Add User</button></div>
+                    <div class="card-body">
+                        ${result.data.map(u => `
+                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
+                                <div class="card-body" style="padding:12px;">
+                                    <strong>${u.name}</strong><br>
+                                    <small>${u.email} | ${u.role}</small><br>
+                                    <span class="badge ${u.active ? 'badge-success' : 'badge-danger'}">${u.active ? 'Active' : 'Inactive'}</span>
+                                    ${u.id !== currentUser.id ? `
+                                        <button class="action-btn" onclick="toggleUser('${u.id}', ${!u.active})">${u.active ? 'Deactivate' : 'Activate'}</button>
+                                        <button class="action-btn action-delete" onclick="deleteUser('${u.id}')">🗑️</button>
+                                    ` : '<span class="badge badge-info">You</span>'}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header"><h3>Change Password</h3></div>
+                    <div class="card-body">
+                        <div class="form-group"><label class="form-label">Current Password</label><input type="password" id="currentPass" class="form-input"></div>
+                        <div class="form-group"><label class="form-label">New Password</label><input type="password" id="newPass" class="form-input"></div>
+                        <button class="btn btn-primary" onclick="changePassword()">Change</button>
+                    </div>
                 </div>
             `;
         }
         
+        function showAddUser() {
+            showModal(`
+                <div class="modal-header"><h3>Add User</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-body">
+                    <div class="form-group"><label class="form-label">Name *</label><input type="text" id="newUserName" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">Email *</label><input type="email" id="newUserEmail" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">Password *</label><input type="password" id="newUserPass" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">Role</label><select id="newUserRole" class="form-select"><option value="cashier">Cashier</option><option value="manager">Manager</option><option value="admin">Admin</option></select></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="addUser()">Create</button></div>
+            `);
+        }
+        
+        async function addUser() {
+            const data = { name: document.getElementById('newUserName').value, email: document.getElementById('newUserEmail').value, password: document.getElementById('newUserPass').value, role: document.getElementById('newUserRole').value };
+            if (!data.name || !data.email || !data.password) { showToast('All fields required', 'error'); return; }
+            await apiRequest('/users', 'POST', data);
+            showToast('User created!');
+            closeModal();
+            loadUsers();
+        }
+        
+        async function toggleUser(id, activate) {
+            const action = activate ? 'activate' : 'deactivate';
+            await apiRequest(`/users/${id}/${action}`, 'PUT');
+            showToast(`User ${action}d!`);
+            loadUsers();
+        }
+        
+        async function deleteUser(id) {
+            if (!confirm('Delete?')) return;
+            await apiRequest(`/users/${id}`, 'DELETE');
+            showToast('Deleted!');
+            loadUsers();
+        }
+        
+        async function changePassword() {
+            const currentPassword = document.getElementById('currentPass')?.value;
+            const newPassword = document.getElementById('newPass')?.value;
+            if (!currentPassword || !newPassword) { showToast('Required', 'error'); return; }
+            await apiRequest('/auth/change-password', 'PUT', { currentPassword, newPassword });
+            showToast('Password changed!');
+        }
+        
+        function showChangePassword() {
+            toggleUserDropdown();
+            showModal(`
+                <div class="modal-header"><h3>Change Password</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-body">
+                    <div class="form-group"><label class="form-label">Current Password</label><input type="password" id="currentPass" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">New Password</label><input type="password" id="newPass" class="form-input"></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">Cancel</button><button class="btn btn-primary" onclick="changePassword()">Change</button></div>
+            `);
+        }
+        
+        // ============ REPORTS ============
+        async function loadReports() {
+            const [sales, inventory] = await Promise.all([apiRequest('/reports/sales'), apiRequest('/reports/inventory')]);
+            document.getElementById('contentArea').innerHTML = `
+                <div class="stats-grid">
+                    <div class="stat-card primary"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(sales.data.totalRevenue)}</div><div class="stat-label">${t('totalRevenue')}</div></div>
+                    <div class="stat-card success"><div class="stat-icon">📈</div><div class="stat-value">${sales.data.totalSales}</div><div class="stat-label">${t('salesHistory')}</div></div>
+                    <div class="stat-card warning"><div class="stat-icon">📦</div><div class="stat-value">${formatBirr(inventory.data.totalStockValue)}</div><div class="stat-label">Stock Value</div></div>
+                </div>
+            `;
+        }
+        
+        // ============ SETTINGS ============
         async function loadSettings() {
             const settings = await apiRequest('/settings');
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
                     <div class="card-header"><h3>${t('settings')}</h3></div>
                     <div class="card-body">
-                        <div class="form-group"><label class="form-label">${t('storeName')}</label><input type="text" id="setStoreName" class="form-input" value="${settings.storeName || ''}"></div>
-                        <div class="form-group"><label class="form-label">${t('taxRate') || 'Tax Rate'} (%)</label><input type="number" id="setTaxRate" class="form-input" value="${settings.taxRate || 15}"></div>
-                        <div class="form-group"><label class="form-label">${t('lowStock')}</label><input type="number" id="setLowStock" class="form-input" value="${settings.lowStockThreshold || 10}"></div>
+                        <div class="form-group"><label class="form-label">Store Name</label><input type="text" id="setStoreName" class="form-input" value="${settings.storeName || ''}"></div>
+                        <div class="form-group"><label class="form-label">Tax Rate (%)</label><input type="number" id="setTaxRate" class="form-input" value="${settings.taxRate || 15}"></div>
                         <button class="btn btn-primary" onclick="saveSettings()">${t('save')}</button>
                     </div>
                 </div>
@@ -1699,28 +1306,23 @@
         }
         
         async function saveSettings() {
-            const data = {
-                storeName: document.getElementById('setStoreName').value,
-                taxRate: parseFloat(document.getElementById('setTaxRate').value),
-                lowStockThreshold: parseInt(document.getElementById('setLowStock').value)
-            };
-            try {
-                await apiRequest('/settings', 'PUT', data);
-                showToast('Settings saved!');
-            } catch (error) { showToast(error.message, 'error'); }
+            const data = { storeName: document.getElementById('setStoreName').value, taxRate: parseFloat(document.getElementById('setTaxRate').value) };
+            await apiRequest('/settings', 'PUT', data);
+            showToast('Settings saved!');
         }
         
+        // ============ POS ============
         async function loadPOS() {
             const products = await apiRequest('/products');
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
-                    <div class="card-header"><h3>${t('pos')}</h3></div>
+                    <div class="card-header"><h3>Point of Sale</h3></div>
                     <div class="card-body">
                         ${products.data.map(p => `
                             <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
                                 <div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;">
-                                    <div><strong>${p.name}</strong><br><small>${formatBirr(p.price)} | ${t('stock')}: ${p.quantity}</small></div>
-                                    <button class="btn btn-primary btn-sm" onclick="showToast('Added to cart!')">${t('add') || 'Add'}</button>
+                                    <div><strong>${p.name}</strong><br><small>${formatBirr(p.price)} | Stock: ${p.quantity}</small></div>
+                                    <button class="btn btn-primary btn-sm">Add</button>
                                 </div>
                             </div>
                         `).join('')}
@@ -1729,7 +1331,7 @@
             `;
         }
         
-        // ============ ጀምር ============
+        // ============ INIT ============
         setLanguage(currentLang);
         loadDashboard();
     </script>
