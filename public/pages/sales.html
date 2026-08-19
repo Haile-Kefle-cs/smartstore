@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-header">
+            <h2>Sales History</h2>
+            <div class="header-actions">
+                <button class="btn btn-secondary" onclick="exportSales()">📥 Export</button>
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <div class="search-box">
+                <input type="text" id="sale-search" class="form-control" placeholder="Search by order number...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <input type="date" id="sale-date-from" class="form-control">
+            <input type="date" id="sale-date-to" class="form-control">
+            <select id="sale-status" class="form-control">
+                <option value="">All Status</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <button class="btn btn-primary" onclick="filterSales()">Filter</button>
+        </div>
+
+        <div class="table-container">
+            <table class="table" id="sales-table">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Customer</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Payment</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

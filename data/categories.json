@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cat1",
+    "name": "Electronics",
+    "description": "Electronic devices",
+    "active": true
+  },
+  {
+    "id": "cat2",
+    "name": "Beverages",
+    "description": "Drinks and beverages",
+    "active": true
+  },
+  {
+    "id": "cat3",
+    "name": "Stationery",
+    "description": "Office supplies",
+    "active": true
+  }
+]

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-header">
+            <h2>Expense Management</h2>
+            <button class="btn btn-primary" onclick="showAddExpenseModal()">
+                + Add Expense
+            </button>
+        </div>
+
+        <div class="filter-bar">
+            <input type="date" id="expense-date-from" class="form-control">
+            <input type="date" id="expense-date-to" class="form-control">
+            <select id="expense-category" class="form-control">
+                <option value="">All Categories</option>
+                <option value="rent">Rent</option>
+                <option value="utilities">Utilities</option>
+                <option value="salaries">Salaries</option>
+                <option value="supplies">Supplies</option>
+                <option value="maintenance">Maintenance</option>
+                <option value="other">Other</option>
+            </select>
+            <button class="btn btn-primary" onclick="filterExpenses()">Filter</button>
+        </div>
+
+        <div class="table-container">
+            <table class="table" id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Payment Method</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expenses-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

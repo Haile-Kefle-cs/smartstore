@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="reports-container">
+        <div class="page-header">
+            <h2>Reports & Analytics</h2>
+            <div class="header-actions">
+                <select id="report-range" class="form-control" onchange="loadReports()">
+                    <option value="today">Today</option>
+                    <option value="this_week">This Week</option>
+                    <option value="this_month">This Month</option>
+                    <option value="last_month">Last Month</option>
+                </select>
+                <button class="btn btn-secondary" onclick="printReport()">🖨️ Print</button>
+            </div>
+        </div>
+
+        <div class="report-tabs">
+            <button class="report-tab active" onclick="switchReport('sales')">Sales Report</button>
+            <button class="report-tab" onclick="switchReport('purchases')">Purchase Report</button>
+            <button class="report-tab" onclick="switchReport('expenses')">Expense Report</button>
+            <button class="report-tab" onclick="switchReport('inventory')">Inventory Report</button>
+            <button class="report-tab" onclick="switchReport('profit-loss')">Profit & Loss</button>
+        </div>
+
+        <div id="report-content">
+            <!-- Dynamic report content -->
+        </div>
+    </div>
+</body>
+</html>

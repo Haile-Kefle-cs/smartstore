@@ -1,0 +1,12 @@
+[
+  {
+    "id": "settings1",
+    "storeName": "SmartStore",
+    "taxRate": 10,
+    "currency": "USD",
+    "currencySymbol": "$",
+    "lowStockThreshold": 10,
+    "receiptFooter": "Thank you!",
+    "createdAt": "2026-08-19T08:26:49.587Z"
+  }
+]

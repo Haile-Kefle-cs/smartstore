@@ -1,0 +1,50 @@
+[
+  {
+    "id": "prod1",
+    "name": "Laptop",
+    "sku": "ELEC-001",
+    "categoryId": "cat1",
+    "price": 999.99,
+    "costPrice": 750,
+    "quantity": 1,
+    "reorderLevel": 5,
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.587Z"
+  },
+  {
+    "id": "prod2",
+    "name": "Mouse",
+    "sku": "ELEC-002",
+    "categoryId": "cat1",
+    "price": 29.99,
+    "costPrice": 15,
+    "quantity": 50,
+    "reorderLevel": 20,
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.587Z"
+  },
+  {
+    "id": "prod3",
+    "name": "Coffee",
+    "sku": "BEV-001",
+    "categoryId": "cat2",
+    "price": 12.99,
+    "costPrice": 6,
+    "quantity": 100,
+    "reorderLevel": 30,
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.587Z"
+  },
+  {
+    "id": "prod4",
+    "name": "Notebook",
+    "sku": "STAT-001",
+    "categoryId": "cat3",
+    "price": 4.99,
+    "costPrice": 2,
+    "quantity": 200,
+    "reorderLevel": 50,
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.587Z"
+  }
+]

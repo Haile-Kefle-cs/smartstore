@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-header">
+            <h2>Customer Management</h2>
+            <button class="btn btn-primary" onclick="showAddCustomerModal()">
+                + Add Customer
+            </button>
+        </div>
+
+        <div class="filter-bar">
+            <div class="search-box">
+                <input type="text" id="customer-search" class="form-control" placeholder="Search customers...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table class="table" id="customers-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Total Purchases</th>
+                        <th>Total Spent</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="customers-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

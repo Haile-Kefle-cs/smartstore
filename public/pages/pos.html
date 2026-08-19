@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point of Sale - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pos.css">
+</head>
+<body>
+    <div class="pos-container">
+        <!-- Left Side: Products -->
+        <div class="pos-products">
+            <div class="pos-header">
+                <h2>Products</h2>
+                <div class="search-box">
+                    <input type="text" id="pos-search" class="form-control" placeholder="Search products...">
+                    <span class="search-icon">🔍</span>
+                </div>
+            </div>
+            
+            <div class="category-tabs" id="pos-categories">
+                <button class="category-tab active" data-category="">All</button>
+                <!-- Dynamically populated -->
+            </div>
+            
+            <div class="products-grid" id="pos-products-grid">
+                <!-- Dynamically populated product cards -->
+            </div>
+        </div>
+        
+        <!-- Right Side: Cart -->
+        <div class="pos-cart">
+            <div class="cart-header">
+                <h2>Current Sale</h2>
+                <button class="btn btn-sm btn-secondary" onclick="clearCart()">Clear</button>
+            </div>
+            
+            <div class="customer-select">
+                <select id="pos-customer" class="form-control">
+                    <option value="">Walk-in Customer</option>
+                    <!-- Dynamically populated -->
+                </select>
+            </div>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Dynamically populated cart items -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax:</span>
+                    <span id="cart-tax">$0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Discount:</span>
+                    <input type="number" id="cart-discount" class="form-control" min="0" max="100" value="0" onchange="updateCartSummary()">
+                    <span>%</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="cart-total">$0.00</span>
+                </div>
+            </div>
+            
+            <div class="payment-methods">
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <button class="payment-option active" data-method="cash" onclick="selectPaymentMethod('cash')">
+                        💵 Cash
+                    </button>
+                    <button class="payment-option" data-method="card" onclick="selectPaymentMethod('card')">
+                        💳 Card
+                    </button>
+                    <button class="payment-option" data-method="mobile" onclick="selectPaymentMethod('mobile')">
+                        📱 Mobile
+                    </button>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary btn-block btn-lg" onclick="completeSale()">
+                Complete Sale
+            </button>
+        </div>
+    </div>
+</body>
+</html>

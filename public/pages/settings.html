@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+    <div class="settings-container">
+        <div class="page-header">
+            <h2>Settings</h2>
+        </div>
+
+        <div class="settings-tabs">
+            <button class="settings-tab active" onclick="switchSettings('general')">General</button>
+            <button class="settings-tab" onclick="switchSettings('store')">Store Information</button>
+            <button class="settings-tab" onclick="switchSettings('notifications')">Notifications</button>
+            <button class="settings-tab" onclick="switchSettings('backup')">Backup & Data</button>
+        </div>
+
+        <div id="settings-content">
+            <!-- Dynamic settings forms -->
+        </div>
+    </div>
+</body>
+</html>

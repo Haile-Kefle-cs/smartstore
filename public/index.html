@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>እንኳን ወደ ስማርት ስቶር መጡ | Welcome to SmartStore</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Nyala', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 10px 20px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        .lang-btn.active {
+            background: white;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .lang-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .welcome-container {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .welcome-logo {
+            font-size: 80px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .welcome-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .welcome-subtitle {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .welcome-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            width: 150px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-icon { font-size: 40px; margin-bottom: 10px; }
+        .feature-text { font-size: 14px; opacity: 0.9; }
+        
+        .login-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-family: inherit;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <button class="lang-btn active" onclick="setLanguage('am')">አማርኛ</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+
+    <div class="welcome-container">
+        <div class="welcome-logo">🏪</div>
+        <h1 class="welcome-title" id="title">ስማርት ስቶር</h1>
+        <p class="welcome-subtitle" id="subtitle">የእቃ አያያዝ ስርዓት</p>
+        
+        <div class="welcome-features">
+            <div class="feature">
+                <div class="feature-icon">📦</div>
+                <div class="feature-text" id="feature1">የምርት አያያዝ</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-text" id="feature2">የሽያጭ ክትትል</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text" id="feature3">ሪፖርቶች እና ትንተና</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <div class="feature-text" id="feature4">የደንበኛ አያያዝ</div>
+            </div>
+        </div>
+        
+        <a href="/login" class="login-btn" id="loginBtn">🔐 ወደ ስርዓቱ ይግቡ</a>
+    </div>
+
+    <script>
+        let currentLang = localStorage.getItem('lang') || 'am';
+        
+        const translations = {
+            am: {
+                title: 'ስማርት ስቶር',
+                subtitle: 'የእቃ አያያዝ ስርዓት',
+                feature1: 'የምርት አያያዝ',
+                feature2: 'የሽያጭ ክትትል',
+                feature3: 'ሪፖርቶች እና ትንተና',
+                feature4: 'የደንበኛ አያያዝ',
+                loginBtn: '🔐 ወደ ስርዓቱ ይግቡ'
+            },
+            en: {
+                title: 'SmartStore',
+                subtitle: 'Inventory Management System',
+                feature1: 'Product Management',
+                feature2: 'Sales Tracking',
+                feature3: 'Reports & Analytics',
+                feature4: 'Customer Management',
+                loginBtn: '🔐 Login to System'
+            }
+        };
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('lang', lang);
+            
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            if (lang === 'am') {
+                document.querySelectorAll('.lang-btn')[0].classList.add('active');
+                document.documentElement.lang = 'am';
+            } else {
+                document.querySelectorAll('.lang-btn')[1].classList.add('active');
+                document.documentElement.lang = 'en';
+            }
+            
+            applyTranslations();
+        }
+        
+        function applyTranslations() {
+            const t = translations[currentLang];
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('feature1').textContent = t.feature1;
+            document.getElementById('feature2').textContent = t.feature2;
+            document.getElementById('feature3').textContent = t.feature3;
+            document.getElementById('feature4').textContent = t.feature4;
+            document.getElementById('loginBtn').textContent = t.loginBtn;
+        }
+        
+        // Initialize
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>

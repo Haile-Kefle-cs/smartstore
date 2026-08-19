@@ -1,0 +1,29 @@
+[
+  {
+    "id": "admin1",
+    "name": "Admin User",
+    "email": "admin@smartstore.com",
+    "password": "$2a$10$iBx9dOkZm3IiDj7oqGxEvumVp17cbgL8F13EmeLh66d7QX3hLQc5W",
+    "role": "admin",
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.486Z"
+  },
+  {
+    "id": "manager1",
+    "name": "Manager User",
+    "email": "manager@smartstore.com",
+    "password": "$2a$10$dHD7RltNUqpnpU3ZIwyCLu5n.8d/XunKOvI7YI0ABlGm0WL3r.Gd2",
+    "role": "manager",
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.536Z"
+  },
+  {
+    "id": "cashier1",
+    "name": "Cashier User",
+    "email": "cashier@smartstore.com",
+    "password": "$2a$10$OL9DhQStqLETxgAM1oYBV.uPII0xYCJpg5G3FrQvjCvNpU1N.Sdsy",
+    "role": "cashier",
+    "active": true,
+    "createdAt": "2026-08-19T08:26:49.584Z"
+  }
+]

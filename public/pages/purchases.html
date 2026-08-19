@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchases - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-header">
+            <h2>Purchase Orders</h2>
+            <button class="btn btn-primary" onclick="showAddPurchaseModal()">
+                + New Purchase
+            </button>
+        </div>
+
+        <div class="filter-bar">
+            <div class="search-box">
+                <input type="text" id="purchase-search" class="form-control" placeholder="Search purchases...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <select id="purchase-supplier-filter" class="form-control">
+                <option value="">All Suppliers</option>
+            </select>
+            <select id="purchase-status-filter" class="form-control">
+                <option value="">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="received">Received</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <div class="table-container">
+            <table class="table" id="purchases-table">
+                <thead>
+                    <tr>
+                        <th>PO Number</th>
+                        <th>Date</th>
+                        <th>Supplier</th>
+                        <th>Items</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="purchases-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

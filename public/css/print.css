@@ -1,0 +1,41 @@
+/* Print Styles */
+@media print {
+    .sidebar,
+    .top-bar,
+    .menu-toggle,
+    .no-print,
+    .btn,
+    .pagination {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-left: 0 !important;
+    }
+    
+    .content-area {
+        padding: 0 !important;
+    }
+    
+    .table-container {
+        box-shadow: none !important;
+    }
+    
+    .table th {
+        background-color: #f0f0f0 !important;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    .card,
+    .stat-card,
+    .chart-card,
+    .activity-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+        page-break-inside: avoid;
+    }
+    
+    a[href]:after {
+        content: none !important;
+    }
+}

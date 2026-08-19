@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card primary">
+                <div class="stat-icon">💰</div>
+                <div class="stat-info">
+                    <h3>Today's Sales</h3>
+                    <p class="stat-value" id="today-sales">$0.00</p>
+                    <span class="stat-change positive" id="sales-change">+0%</span>
+                </div>
+            </div>
+            
+            <div class="stat-card success">
+                <div class="stat-icon">📦</div>
+                <div class="stat-info">
+                    <h3>Total Products</h3>
+                    <p class="stat-value" id="total-products">0</p>
+                    <span class="stat-label">items in stock</span>
+                </div>
+            </div>
+            
+            <div class="stat-card warning">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-info">
+                    <h3>Low Stock Items</h3>
+                    <p class="stat-value" id="low-stock">0</p>
+                    <span class="stat-label">need attention</span>
+                </div>
+            </div>
+            
+            <div class="stat-card danger">
+                <div class="stat-icon">👥</div>
+                <div class="stat-info">
+                    <h3>Total Customers</h3>
+                    <p class="stat-value" id="total-customers">0</p>
+                    <span class="stat-label">registered</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="dashboard-row">
+            <div class="chart-card">
+                <h3>Sales Overview</h3>
+                <canvas id="sales-chart"></canvas>
+            </div>
+            
+            <div class="chart-card">
+                <h3>Top Products</h3>
+                <div id="top-products-list" class="product-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="dashboard-row">
+            <div class="activity-card">
+                <h3>Recent Sales</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Order #</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recent-sales">
+                            <!-- Dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="activity-card">
+                <h3>Low Stock Alerts</h3>
+                <div id="low-stock-list" class="alert-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

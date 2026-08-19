@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - SmartStore</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/tables.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="page-header">
+            <h2>Product Management</h2>
+            <div class="header-actions">
+                <button class="btn btn-primary" onclick="showAddProductModal()">
+                    + Add Product
+                </button>
+                <button class="btn btn-secondary" onclick="exportProducts()">
+                    📥 Export
+                </button>
+            </div>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="filter-bar">
+            <div class="search-box">
+                <input type="text" id="product-search" class="form-control" placeholder="Search products...">
+                <span class="search-icon">🔍</span>
+            </div>
+            <select id="category-filter" class="form-control">
+                <option value="">All Categories</option>
+            </select>
+            <select id="status-filter" class="form-control">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+                <option value="low-stock">Low Stock</option>
+            </select>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-container">
+            <table class="table" id="products-table">
+                <thead>
+                    <tr>
+                        <th>SKU</th>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Cost</th>
+                        <th>Stock</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="products-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" id="products-pagination">
+            <!-- Dynamically populated -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="product-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="product-modal-title">Add Product</h3>
+                <button class="modal-close" onclick="closeProductModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <form id="product-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-name">Product Name *</label>
+                            <input type="text" id="product-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-sku">SKU *</label>
+                            <input type="text" id="product-sku" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-category">Category</label>
+                            <select id="product-category" class="form-control">
+                                <!-- Dynamically populated -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-status">Status</label>
+                            <select id="product-status" class="form-control">
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-price">Selling Price *</label>
+                            <input type="number" id="product-price" class="form-control" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-cost">Cost Price *</label>
+                            <input type="number" id="product-cost" class="form-control" step="0.01" min="0" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="product-quantity">Initial Stock</label>
+                            <input type="number" id="product-quantity" class="form-control" min="0" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-reorder">Reorder Level</label>
+                            <input type="number" id="product-reorder" class="form-control" min="0" value="10">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" class="form-control" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeProductModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveProduct()">Save Product</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
