@@ -15,9 +15,7 @@
             --light: #f1f5f9;
             --border: #e2e8f0;
         }
-        
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
         body {
             font-family: 'Nyala', 'Noto Sans Ethiopic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--light);
@@ -25,7 +23,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        
         .app-container { display: flex; min-height: 100vh; }
         
         .sidebar {
@@ -38,7 +35,6 @@
             z-index: 1000;
             transition: transform 0.3s ease;
         }
-        
         .sidebar-header {
             padding: 20px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -46,7 +42,6 @@
             align-items: center;
             gap: 12px;
         }
-        
         .sidebar-logo {
             width: 45px;
             height: 45px;
@@ -57,20 +52,16 @@
             justify-content: center;
             font-size: 24px;
         }
-        
         .sidebar-title h2 { font-size: 18px; }
         .sidebar-title p { font-size: 10px; color: rgba(255,255,255,0.6); }
-        
         .sidebar-section {
             padding: 15px 20px 5px;
             font-size: 11px;
             text-transform: uppercase;
             color: rgba(255,255,255,0.4);
         }
-        
         .nav-menu { list-style: none; padding: 10px 0; }
         .nav-item { margin: 2px 10px; }
-        
         .nav-link {
             display: flex;
             align-items: center;
@@ -83,18 +74,12 @@
             text-decoration: none;
             min-height: 44px;
         }
-        
         .nav-link:hover { background: rgba(255,255,255,0.1); color: white; }
         .nav-link.active { background: var(--primary); color: white; }
         .nav-icon { font-size: 18px; width: 22px; text-align: center; }
         .nav-text { font-size: 13px; }
         
-        .main-content {
-            flex: 1;
-            margin-left: 280px;
-            min-height: 100vh;
-        }
-        
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; }
         .top-bar {
             height: 60px;
             background: white;
@@ -107,14 +92,11 @@
             top: 0;
             z-index: 900;
         }
-        
         .top-bar-left { display: flex; align-items: center; gap: 15px; }
         .menu-toggle { display: none; background: none; border: none; font-size: 24px; cursor: pointer; }
         .top-bar-title h1 { font-size: 20px; }
         .top-bar-title p { font-size: 12px; color: #64748b; }
-        
         .top-bar-right { display: flex; align-items: center; gap: 12px; }
-        
         .lang-toggle { display: flex; gap: 2px; background: var(--light); border-radius: 20px; padding: 3px; }
         .lang-btn {
             padding: 6px 12px;
@@ -127,7 +109,6 @@
             font-family: inherit;
         }
         .lang-btn.active { background: var(--primary); color: white; }
-        
         .user-profile { display: flex; align-items: center; gap: 10px; cursor: pointer; position: relative; }
         .user-avatar {
             width: 35px;
@@ -143,7 +124,6 @@
         .user-info { display: flex; flex-direction: column; }
         .user-name { font-weight: 600; font-size: 13px; }
         .user-role { font-size: 11px; color: #64748b; }
-        
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -168,14 +148,12 @@
         .dropdown-item:hover { background: var(--light); }
         
         .content-area { padding: 20px; max-width: 1400px; margin: 0 auto; }
-        
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 20px;
         }
-        
         .stat-card {
             background: white;
             padding: 20px;
@@ -184,7 +162,6 @@
             position: relative;
             overflow: hidden;
         }
-        
         .stat-card::before {
             content: '';
             position: absolute;
@@ -197,7 +174,6 @@
         .stat-card.success::before { background: var(--success); }
         .stat-card.warning::before { background: var(--warning); }
         .stat-card.danger::before { background: var(--danger); }
-        
         .stat-icon {
             width: 45px;
             height: 45px;
@@ -212,7 +188,6 @@
         .stat-card.success .stat-icon { background: rgba(16, 185, 129, 0.1); }
         .stat-card.warning .stat-icon { background: rgba(245, 158, 11, 0.1); }
         .stat-card.danger .stat-icon { background: rgba(239, 68, 68, 0.1); }
-        
         .stat-value { font-size: 24px; font-weight: 700; margin-bottom: 5px; }
         .stat-label { font-size: 13px; color: #64748b; }
         
@@ -223,7 +198,6 @@
             margin-bottom: 15px;
             overflow: hidden;
         }
-        
         .card-header {
             padding: 15px 20px;
             border-bottom: 1px solid var(--border);
@@ -235,7 +209,6 @@
         }
         .card-header h3 { font-size: 16px; }
         .card-body { padding: 15px 20px; }
-        
         .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .table { width: 100%; border-collapse: collapse; min-width: 500px; }
         .table th {
@@ -247,7 +220,6 @@
             border-bottom: 2px solid var(--border);
         }
         .table td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 13px; }
-        
         .badge {
             padding: 4px 10px;
             border-radius: 15px;
@@ -258,7 +230,6 @@
         .badge-warning { background: #fef3c7; color: #92400e; }
         .badge-danger { background: #fee2e2; color: #991b1b; }
         .badge-info { background: #dbeafe; color: #1e40af; }
-        
         .btn {
             padding: 10px 18px;
             border: none;
@@ -276,7 +247,6 @@
         .btn-warning { background: var(--warning); color: white; }
         .btn-secondary { background: #64748b; color: white; }
         .btn-sm { padding: 6px 12px; font-size: 12px; min-height: 30px; }
-        
         .action-btn {
             padding: 6px 10px;
             border: none;
@@ -288,7 +258,6 @@
         }
         .action-edit { background: #dbeafe; color: #1e40af; }
         .action-delete { background: #fee2e2; color: #991b1b; }
-        
         .modal {
             position: fixed;
             top: 0;
@@ -324,7 +293,6 @@
             justify-content: flex-end;
             gap: 10px;
         }
-        
         .form-group { margin-bottom: 15px; }
         .form-label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 13px; }
         .form-input {
@@ -344,7 +312,6 @@
             font-size: 14px;
             font-family: inherit;
         }
-        
         .toast-container { position: fixed; top: 15px; right: 15px; z-index: 4000; }
         .toast {
             padding: 12px 18px;
@@ -358,12 +325,10 @@
         .toast-success { background: var(--success); }
         .toast-error { background: var(--danger); }
         .toast-warning { background: var(--warning); }
-        
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0); opacity: 1; }
         }
-        
         .loading-spinner { display: flex; justify-content: center; align-items: center; padding: 40px; }
         .spinner {
             width: 35px;
@@ -374,7 +339,6 @@
             animation: spin 0.8s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        
         .quick-actions {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -394,7 +358,6 @@
         .quick-action-btn:active { border-color: var(--primary); transform: scale(0.95); }
         .quick-action-icon { font-size: 28px; margin-bottom: 8px; }
         .quick-action-label { font-size: 12px; font-weight: 500; }
-        
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -422,7 +385,6 @@
             .quick-actions { grid-template-columns: repeat(2, 1fr); gap: 8px; }
             .lang-btn { padding: 5px 8px; font-size: 10px; }
         }
-        
         @media (max-width: 480px) {
             .stats-grid { grid-template-columns: 1fr; }
         }
@@ -436,43 +398,39 @@
             <div class="sidebar-header">
                 <div class="sidebar-logo">🏪</div>
                 <div class="sidebar-title">
-                    <h2 data-translate="storeName">ስማርት ስቶር</h2>
+                    <h2>ስማርት ስቶር</h2>
                     <p>SmartStore</p>
                 </div>
             </div>
             
             <div class="sidebar-section">Main</div>
             <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link active" data-page="dashboard"><span class="nav-icon">📊</span><span class="nav-text" data-translate="dashboard">ዳሽቦርድ</span></a></li>
+                <li class="nav-item"><a class="nav-link active" data-page="dashboard"><span class="nav-icon">📊</span><span class="nav-text">ዳሽቦርድ</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="pos"><span class="nav-icon">🛒</span><span class="nav-text">POS</span></a></li>
             </ul>
-            
             <div class="sidebar-section">Inventory</div>
             <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" data-page="products"><span class="nav-icon">📦</span><span class="nav-text" data-translate="products">ምርቶች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="categories"><span class="nav-icon">🏷️</span><span class="nav-text" data-translate="categories">ምድቦች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="products"><span class="nav-icon">📦</span><span class="nav-text">ምርቶች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="categories"><span class="nav-icon">🏷️</span><span class="nav-text">ምድቦች</span></a></li>
                 <li class="nav-item"><a class="nav-link" data-page="inventory"><span class="nav-icon">📋</span><span class="nav-text">ክምችት</span></a></li>
             </ul>
-            
             <div class="sidebar-section">Sales</div>
             <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" data-page="sales"><span class="nav-icon">💰</span><span class="nav-text" data-translate="salesHistory">ሽያጮች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="expenses"><span class="nav-icon">💸</span><span class="nav-text" data-translate="expenses">ወጪዎች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="sales"><span class="nav-icon">💰</span><span class="nav-text">ሽያጮች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="expenses"><span class="nav-icon">💸</span><span class="nav-text">ወጪዎች</span></a></li>
             </ul>
-            
             <div class="sidebar-section">Management</div>
             <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" data-page="customers"><span class="nav-icon">👥</span><span class="nav-text" data-translate="customers">ደንበኞች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="suppliers"><span class="nav-icon">🚚</span><span class="nav-text" data-translate="suppliers">አቅራቢዎች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="customers"><span class="nav-icon">👥</span><span class="nav-text">ደንበኞች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="suppliers"><span class="nav-icon">🚚</span><span class="nav-text">አቅራቢዎች</span></a></li>
                 <li class="nav-item" id="usersNavItem" style="display:none;"><a class="nav-link" data-page="users"><span class="nav-icon">👤</span><span class="nav-text">ተጠቃሚዎች</span></a></li>
             </ul>
-            
             <div class="sidebar-section">Tools</div>
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link" data-page="barcode"><span class="nav-icon">📷</span><span class="nav-text">ባርኮድ</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="email"><span class="nav-icon">📧</span><span class="nav-text" data-translate="email">ኢሜይል</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="reports"><span class="nav-icon">📈</span><span class="nav-text" data-translate="reports">ሪፖርቶች</span></a></li>
-                <li class="nav-item"><a class="nav-link" data-page="settings"><span class="nav-icon">⚙️</span><span class="nav-text" data-translate="settings">ቅንብሮች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="email"><span class="nav-icon">📧</span><span class="nav-text">ኢሜይል</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="reports"><span class="nav-icon">📈</span><span class="nav-text">ሪፖርቶች</span></a></li>
+                <li class="nav-item"><a class="nav-link" data-page="settings"><span class="nav-icon">⚙️</span><span class="nav-text">ቅንብሮች</span></a></li>
             </ul>
         </nav>
         
@@ -485,13 +443,11 @@
                         <p id="pageSubtitle">Welcome</p>
                     </div>
                 </div>
-                
                 <div class="top-bar-right">
                     <div class="lang-toggle">
                         <button class="lang-btn active" onclick="setLanguage('am')">አማ</button>
                         <button class="lang-btn" onclick="setLanguage('en')">EN</button>
                     </div>
-                    
                     <div class="user-profile" onclick="toggleUserDropdown()">
                         <div class="user-avatar" id="userAvatar"></div>
                         <div class="user-info">
@@ -505,7 +461,6 @@
                     </div>
                 </div>
             </header>
-            
             <main class="content-area" id="contentArea"></main>
         </div>
     </div>
@@ -513,7 +468,6 @@
     <div class="modal" id="modal">
         <div class="modal-content" id="modalContent"></div>
     </div>
-    
     <div class="toast-container" id="toastContainer"></div>
 
     <script>
@@ -523,7 +477,7 @@
                 dashboard: 'ዳሽቦርድ', products: 'ምርቶች', categories: 'ምድቦች',
                 salesHistory: 'ሽያጮች', expenses: 'ወጪዎች', customers: 'ደንበኞች',
                 suppliers: 'አቅራቢዎች', email: 'ኢሜይል', reports: 'ሪፖርቶች',
-                settings: 'ቅንብሮች', logout: 'ውጣ', totalRevenue: 'ጠቅላላ ገቢ',
+                settings: 'ቅንብሮች', totalRevenue: 'ጠቅላላ ገቢ',
                 totalProducts: 'ጠቅላላ ምርቶች', lowStock: 'ዝቅተኛ ክምችት',
                 totalCustomers: 'ደንበኞች', addProduct: 'ምርት ጨምር',
                 addCustomer: 'ደንበኛ ጨምር', addSupplier: 'አቅራቢ ጨምር',
@@ -535,14 +489,13 @@
                 sendEmail: 'ኢሜይል ላክ', lowStockAlert: 'ዝቅተኛ ክምችት ማስጠንቀቂያ',
                 viewAll: 'ሁሉንም ይመልከቱ', recentProducts: 'የቅርብ ጊዜ ምርቶች',
                 name: 'ስም', emailAddress: 'ኢሜይል', phone: 'ስልክ',
-                role: 'ሚና', password: 'የይለፍ ቃል', description: 'መግለጫ',
-                amount: 'መጠን', quantity: 'ብዛት'
+                role: 'ሚና', description: 'መግለጫ', amount: 'መጠን', quantity: 'ብዛት'
             },
             en: {
                 dashboard: 'Dashboard', products: 'Products', categories: 'Categories',
                 salesHistory: 'Sales', expenses: 'Expenses', customers: 'Customers',
                 suppliers: 'Suppliers', email: 'Email', reports: 'Reports',
-                settings: 'Settings', logout: 'Logout', totalRevenue: 'Total Revenue',
+                settings: 'Settings', totalRevenue: 'Total Revenue',
                 totalProducts: 'Total Products', lowStock: 'Low Stock',
                 totalCustomers: 'Customers', addProduct: 'Add Product',
                 addCustomer: 'Add Customer', addSupplier: 'Add Supplier',
@@ -554,49 +507,27 @@
                 sendEmail: 'Send Email', lowStockAlert: 'Low Stock Alert',
                 viewAll: 'View All', recentProducts: 'Recent Products',
                 name: 'Name', emailAddress: 'Email', phone: 'Phone',
-                role: 'Role', password: 'Password', description: 'Description',
-                amount: 'Amount', quantity: 'Quantity'
+                role: 'Role', description: 'Description', amount: 'Amount', quantity: 'Quantity'
             }
         };
         
         let currentLang = localStorage.getItem('lang') || 'am';
-        
         function setLanguage(lang) {
             currentLang = lang;
             localStorage.setItem('lang', lang);
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            if (lang === 'am') {
-                document.querySelectorAll('.lang-btn')[0].classList.add('active');
-                document.documentElement.lang = 'am';
-            } else {
-                document.querySelectorAll('.lang-btn')[1].classList.add('active');
-                document.documentElement.lang = 'en';
-            }
-            applyTranslations();
+            if (lang === 'am') { document.querySelectorAll('.lang-btn')[0].classList.add('active'); document.documentElement.lang = 'am'; }
+            else { document.querySelectorAll('.lang-btn')[1].classList.add('active'); document.documentElement.lang = 'en'; }
             const activePage = document.querySelector('.nav-link.active')?.getAttribute('data-page');
             if (activePage) loadPage(activePage);
         }
-        
-        function applyTranslations() {
-            document.querySelectorAll('[data-translate]').forEach(el => {
-                const key = el.getAttribute('data-translate');
-                if (translations[currentLang][key]) el.textContent = translations[currentLang][key];
-            });
-            document.getElementById('pageSubtitle').textContent = currentLang === 'am' ? 'እንኳን ደህና መጡ!' : 'Welcome!';
-        }
-        
         function t(key) { return translations[currentLang][key] || key; }
-        
-        function formatBirr(amount) {
-            return 'ብር ' + Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-        }
+        function formatBirr(amount) { return 'ብር ' + Number(amount).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
         
         // ============ AUTH ============
         const authToken = localStorage.getItem('authToken');
         const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
-        
         if (!authToken || !currentUser) { window.location.href = '/login'; }
-        
         document.getElementById('userName').textContent = currentUser.name;
         document.getElementById('userRole').textContent = currentUser.role;
         document.getElementById('userAvatar').textContent = currentUser.name.charAt(0);
@@ -605,11 +536,7 @@
         function openSidebar() { document.getElementById('sidebar').classList.add('show'); document.getElementById('sidebarOverlay').classList.add('show'); }
         function closeSidebar() { document.getElementById('sidebar').classList.remove('show'); document.getElementById('sidebarOverlay').classList.remove('show'); }
         function toggleUserDropdown() { document.getElementById('userDropdown').classList.toggle('show'); }
-        
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.user-profile')) document.getElementById('userDropdown').classList.remove('show');
-        });
-        
+        document.addEventListener('click', function(e) { if (!e.target.closest('.user-profile')) document.getElementById('userDropdown').classList.remove('show'); });
         function showToast(message, type = 'success') {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
@@ -618,15 +545,10 @@
             container.appendChild(toast);
             setTimeout(() => toast.remove(), 3000);
         }
-        
-        function showLoading() {
-            document.getElementById('contentArea').innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
-        }
-        
+        function showLoading() { document.getElementById('contentArea').innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>'; }
         function showModal(html) { document.getElementById('modalContent').innerHTML = html; document.getElementById('modal').style.display = 'flex'; }
         function closeModal() { document.getElementById('modal').style.display = 'none'; }
         function logout() { localStorage.removeItem('authToken'); localStorage.removeItem('currentUser'); window.location.href = '/'; }
-        
         async function apiRequest(endpoint, method = 'GET', data = null) {
             const headers = { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` };
             const config = { method, headers };
@@ -678,11 +600,8 @@
         
         // ============ DASHBOARD ============
         async function loadDashboard() {
-            const [products, sales, customers] = await Promise.all([
-                apiRequest('/products'), apiRequest('/sales'), apiRequest('/customers')
-            ]);
+            const [products, sales, customers] = await Promise.all([apiRequest('/products'), apiRequest('/sales'), apiRequest('/customers')]);
             const totalRevenue = sales.data.reduce((s, sale) => s + sale.total, 0);
-            
             document.getElementById('contentArea').innerHTML = `
                 <div class="quick-actions">
                     <div class="quick-action-btn" onclick="loadPage('barcode')"><div class="quick-action-icon">📷</div><div class="quick-action-label">Barcode</div></div>
@@ -690,29 +609,20 @@
                     <div class="quick-action-btn" onclick="loadPage('products')"><div class="quick-action-icon">📦</div><div class="quick-action-label">${t('products')}</div></div>
                     <div class="quick-action-btn" onclick="loadPage('reports')"><div class="quick-action-icon">📈</div><div class="quick-action-label">${t('reports')}</div></div>
                 </div>
-                
                 <div class="stats-grid">
                     <div class="stat-card primary"><div class="stat-icon">💰</div><div class="stat-value">${formatBirr(totalRevenue)}</div><div class="stat-label">${t('totalRevenue')}</div></div>
                     <div class="stat-card success"><div class="stat-icon">📦</div><div class="stat-value">${products.data.length}</div><div class="stat-label">${t('totalProducts')}</div></div>
                     <div class="stat-card warning"><div class="stat-icon">⚠️</div><div class="stat-value">${products.data.filter(p => p.quantity <= p.reorderLevel).length}</div><div class="stat-label">${t('lowStock')}</div></div>
                     <div class="stat-card danger"><div class="stat-icon">👥</div><div class="stat-value">${customers.data.length}</div><div class="stat-label">${t('totalCustomers')}</div></div>
                 </div>
-                
                 <div class="card">
-                    <div class="card-header"><h3>${t('recentProducts')}</h3><button class="btn btn-primary btn-sm" onclick="loadPage('products')">${t('viewAll')}</button></div>
+                    <div class="card-header"><h3>${t('recentProducts')}</h3></div>
                     <div class="card-body">
                         <div class="table-container">
                             <table class="table">
                                 <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('status')}</th></tr></thead>
                                 <tbody>
-                                    ${products.data.slice(0, 5).map(p => `
-                                        <tr>
-                                            <td><strong>${p.name}</strong></td>
-                                            <td>${formatBirr(p.price)}</td>
-                                            <td>${p.quantity}</td>
-                                            <td><span class="badge ${p.stockStatus === 'in-stock' ? 'badge-success' : p.stockStatus === 'low-stock' ? 'badge-warning' : 'badge-danger'}">${t(p.stockStatus === 'in-stock' ? 'inStock' : p.stockStatus === 'low-stock' ? 'lowStockStatus' : 'outOfStock')}</span></td>
-                                        </tr>
-                                    `).join('')}
+                                    ${products.data.slice(0, 5).map(p => `<tr><td><strong>${p.name}</strong></td><td>${formatBirr(p.price)}</td><td>${p.quantity}</td><td><span class="badge ${p.stockStatus === 'in-stock' ? 'badge-success' : 'badge-warning'}">${p.stockStatus}</span></td></tr>`).join('')}
                                 </tbody>
                             </table>
                         </div>
@@ -721,99 +631,7 @@
             `;
         }
         
-        // ============ PRODUCTS ============
-        async function loadProducts() {
-            const result = await apiRequest('/products');
-            document.getElementById('contentArea').innerHTML = `
-                <div class="card">
-                    <div class="card-header"><h3>${t('products')} (${result.data.length})</h3><button class="btn btn-primary btn-sm" onclick="showAddProduct()">+ ${t('addProduct')}</button></div>
-                    <div class="card-body">
-                        <div class="table-container">
-                            <table class="table">
-                                <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('actions')}</th></tr></thead>
-                                <tbody>
-                                    ${result.data.map(p => `
-                                        <tr>
-                                            <td><strong>${p.name}</strong><br><small>${p.sku}</small></td>
-                                            <td>${formatBirr(p.price)}</td>
-                                            <td>${p.quantity}</td>
-                                            <td>
-                                                <button class="action-btn action-edit" onclick="showEditProduct('${p.id}')">✏️</button>
-                                                <button class="action-btn action-delete" onclick="deleteProduct('${p.id}')">🗑️</button>
-                                            </td>
-                                        </tr>
-                                    `).join('') || '<tr><td colspan="4">No products</td></tr>'}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        function showAddProduct() {
-            showModal(`
-                <div class="modal-header"><h3>${t('addProduct')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
-                <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('productName')} *</label><input type="text" id="prodName" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">SKU *</label><input type="text" id="prodSku" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('price')} (ብር) *</label><input type="number" id="prodPrice" class="form-input"></div>
-                    <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="0"></div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="saveProduct()">${t('save')}</button></div>
-            `);
-        }
-        
-        async function saveProduct() {
-            const data = {
-                name: document.getElementById('prodName').value,
-                sku: document.getElementById('prodSku').value,
-                price: parseFloat(document.getElementById('prodPrice').value),
-                costPrice: parseFloat(document.getElementById('prodPrice').value) * 0.7,
-                quantity: parseInt(document.getElementById('prodQty').value),
-                reorderLevel: 10
-            };
-            if (!data.name || !data.sku) { showToast('Name and SKU required', 'error'); return; }
-            await apiRequest('/products', 'POST', data);
-            showToast('Product added!');
-            closeModal();
-            loadProducts();
-        }
-        
-        async function showEditProduct(id) {
-            const result = await apiRequest('/products');
-            const p = result.data.find(x => x.id === id);
-            showModal(`
-                <div class="modal-header"><h3>${t('edit')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
-                <div class="modal-body">
-                    <div class="form-group"><label class="form-label">${t('productName')}</label><input type="text" id="prodName" class="form-input" value="${p.name}"></div>
-                    <div class="form-group"><label class="form-label">${t('price')} (ብር)</label><input type="number" id="prodPrice" class="form-input" value="${p.price}"></div>
-                    <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="${p.quantity}"></div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="updateProduct('${id}')">${t('save')}</button></div>
-            `);
-        }
-        
-        async function updateProduct(id) {
-            const data = {
-                name: document.getElementById('prodName').value,
-                price: parseFloat(document.getElementById('prodPrice').value),
-                quantity: parseInt(document.getElementById('prodQty').value)
-            };
-            await apiRequest(`/products/${id}`, 'PUT', data);
-            showToast('Product updated!');
-            closeModal();
-            loadProducts();
-        }
-        
-        async function deleteProduct(id) {
-            if (!confirm('Delete this product?')) return;
-            await apiRequest(`/products/${id}`, 'DELETE');
-            showToast('Product deleted!');
-            loadProducts();
-        }
-        
-        // ============ EMAIL (FormSubmit.co - Works on Render) ============
+        // ============ EMAIL (3 Methods with Fallback) ============
         async function loadEmailPage() {
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
@@ -836,71 +654,121 @@
             const to = document.getElementById('emailTo').value;
             const subject = document.getElementById('emailSubject').value;
             const text = document.getElementById('emailText').value;
-            
             if (!to || !subject || !text) { showToast('All fields required', 'error'); return; }
             
             showToast('Sending...', 'warning');
             
+            // Method 1: FormSubmit
             try {
                 const response = await fetch('https://formsubmit.co/ajax/hulgebmereja2017@gmail.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        email: to,
-                        subject: subject,
-                        message: text,
-                        _subject: 'SmartStore: ' + subject,
-                        _template: 'table',
-                        _captcha: 'false'
-                    })
+                    body: JSON.stringify({ email: to, subject: subject, message: text, _subject: 'SmartStore: ' + subject, _template: 'table', _captcha: 'false' })
                 });
-                
                 const result = await response.json();
-                console.log('Email result:', result);
-                
-                if (result.success === 'true' || result.success === true) {
-                    showToast('✅ Email sent successfully!');
-                    loadEmailPage();
-                } else {
-                    showToast('Failed to send email', 'error');
-                }
-            } catch (error) {
-                console.error('Email error:', error);
-                showToast('Error: ' + error.message, 'error');
-            }
+                if (result.success === 'true' || result.success === true) { showToast('✅ Email sent!'); return; }
+            } catch (e) { console.log('FormSubmit failed'); }
+            
+            // Method 2: Server API
+            try {
+                await apiRequest('/email/send', 'POST', { to, subject, text });
+                showToast('✅ Email sent!'); return;
+            } catch (e) { console.log('Server API failed'); }
+            
+            // Method 3: Mailto
+            window.open(`mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`, '_blank');
+            showToast('📧 Email app opened', 'warning');
         }
         
         async function sendLowStockAlert() {
             const result = await apiRequest('/products');
             const lowStock = result.data.filter(p => p.quantity <= p.reorderLevel);
-            
             if (lowStock.length === 0) { showToast('No low stock products', 'warning'); return; }
-            
             const message = lowStock.map(p => `${p.name}: ${p.quantity} remaining`).join('\n');
             
             try {
                 const response = await fetch('https://formsubmit.co/ajax/hulgebmereja2017@gmail.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                    body: JSON.stringify({
-                        email: 'hulgebmereja2017@gmail.com',
-                        subject: 'Low Stock Alert',
-                        message: message,
-                        _subject: 'SmartStore - Low Stock Alert',
-                        _template: 'table',
-                        _captcha: 'false'
-                    })
+                    body: JSON.stringify({ email: 'hulgebmereja2017@gmail.com', message: message, _subject: 'Low Stock Alert', _template: 'table', _captcha: 'false' })
                 });
-                
                 const result = await response.json();
-                if (result.success === 'true' || result.success === true) {
-                    showToast('✅ Alert sent!');
-                } else {
-                    showToast('Failed to send alert', 'error');
-                }
-            } catch (error) {
-                showToast('Error: ' + error.message, 'error');
-            }
+                if (result.success === 'true' || result.success === true) { showToast('✅ Alert sent!'); return; }
+            } catch (e) { console.log('FormSubmit failed'); }
+            
+            window.open(`mailto:hulgebmereja2017@gmail.com?subject=${encodeURIComponent('Low Stock Alert')}&body=${encodeURIComponent(message)}`, '_blank');
+            showToast('📧 Email app opened', 'warning');
+        }
+        
+        // ============ PRODUCTS ============
+        async function loadProducts() {
+            const result = await apiRequest('/products');
+            document.getElementById('contentArea').innerHTML = `
+                <div class="card">
+                    <div class="card-header"><h3>${t('products')} (${result.data.length})</h3><button class="btn btn-primary btn-sm" onclick="showAddProduct()">+ ${t('addProduct')}</button></div>
+                    <div class="card-body">
+                        <div class="table-container">
+                            <table class="table">
+                                <thead><tr><th>${t('productName')}</th><th>${t('price')}</th><th>${t('stock')}</th><th>${t('actions')}</th></tr></thead>
+                                <tbody>
+                                    ${result.data.map(p => `<tr><td><strong>${p.name}</strong><br><small>${p.sku}</small></td><td>${formatBirr(p.price)}</td><td>${p.quantity}</td><td><button class="action-btn action-edit" onclick="showEditProduct('${p.id}')">✏️</button><button class="action-btn action-delete" onclick="deleteProduct('${p.id}')">🗑️</button></td></tr>`).join('') || '<tr><td colspan="4">No products</td></tr>'}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function showAddProduct() {
+            showModal(`
+                <div class="modal-header"><h3>${t('addProduct')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-body">
+                    <div class="form-group"><label class="form-label">${t('productName')} *</label><input type="text" id="prodName" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">SKU *</label><input type="text" id="prodSku" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">${t('price')} (ብር) *</label><input type="number" id="prodPrice" class="form-input"></div>
+                    <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="0"></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="saveProduct()">${t('save')}</button></div>
+            `);
+        }
+        
+        async function saveProduct() {
+            const data = { name: document.getElementById('prodName').value, sku: document.getElementById('prodSku').value, price: parseFloat(document.getElementById('prodPrice').value), costPrice: parseFloat(document.getElementById('prodPrice').value) * 0.7, quantity: parseInt(document.getElementById('prodQty').value), reorderLevel: 10 };
+            if (!data.name || !data.sku) { showToast('Name and SKU required', 'error'); return; }
+            await apiRequest('/products', 'POST', data);
+            showToast('Product added!');
+            closeModal();
+            loadProducts();
+        }
+        
+        async function showEditProduct(id) {
+            const result = await apiRequest('/products');
+            const p = result.data.find(x => x.id === id);
+            showModal(`
+                <div class="modal-header"><h3>${t('edit')}</h3><button class="btn btn-secondary btn-sm" onclick="closeModal()">✕</button></div>
+                <div class="modal-body">
+                    <div class="form-group"><label class="form-label">${t('productName')}</label><input type="text" id="prodName" class="form-input" value="${p.name}"></div>
+                    <div class="form-group"><label class="form-label">${t('price')} (ብር)</label><input type="number" id="prodPrice" class="form-input" value="${p.price}"></div>
+                    <div class="form-group"><label class="form-label">${t('quantity')}</label><input type="number" id="prodQty" class="form-input" value="${p.quantity}"></div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" onclick="closeModal()">${t('cancel')}</button><button class="btn btn-primary" onclick="updateProduct('${id}')">${t('save')}</button></div>
+            `);
+        }
+        
+        async function updateProduct(id) {
+            const data = { name: document.getElementById('prodName').value, price: parseFloat(document.getElementById('prodPrice').value), quantity: parseInt(document.getElementById('prodQty').value) };
+            await apiRequest(`/products/${id}`, 'PUT', data);
+            showToast('Product updated!');
+            closeModal();
+            loadProducts();
+        }
+        
+        async function deleteProduct(id) {
+            if (!confirm('Delete?')) return;
+            await apiRequest(`/products/${id}`, 'DELETE');
+            showToast('Deleted!');
+            loadProducts();
         }
         
         // ============ BARCODE ============
@@ -915,9 +783,7 @@
                     </div>
                 </div>
             `;
-            document.getElementById('barcodeInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') scanBarcode(this.value);
-            });
+            document.getElementById('barcodeInput').addEventListener('keypress', function(e) { if (e.key === 'Enter') scanBarcode(this.value); });
             document.getElementById('barcodeInput').focus();
         }
         
@@ -926,16 +792,7 @@
             try {
                 const result = await apiRequest(`/products/barcode/${barcode}`);
                 const p = result.data;
-                document.getElementById('barcodeResult').innerHTML = `
-                    <div class="card" style="border:2px solid var(--success);">
-                        <div class="card-body">
-                            <h4>✅ Found</h4>
-                            <p><strong>${p.name}</strong></p>
-                            <p>Price: ${formatBirr(p.price)}</p>
-                            <p>Stock: ${p.quantity}</p>
-                        </div>
-                    </div>
-                `;
+                document.getElementById('barcodeResult').innerHTML = `<div class="card" style="border:2px solid var(--success);"><div class="card-body"><h4>✅ Found</h4><p><strong>${p.name}</strong></p><p>Price: ${formatBirr(p.price)}</p><p>Stock: ${p.quantity}</p></div></div>`;
             } catch (error) {
                 document.getElementById('barcodeResult').innerHTML = `<div class="card" style="border:2px solid var(--danger);"><div class="card-body"><p>❌ Not found: ${barcode}</p></div></div>`;
             }
@@ -948,14 +805,7 @@
                 <div class="card">
                     <div class="card-header"><h3>${t('categories')}</h3><button class="btn btn-primary btn-sm" onclick="showAddCategory()">+ Add</button></div>
                     <div class="card-body">
-                        ${result.data.map(c => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;">
-                                    <div><strong>${c.name}</strong><br><small>${c.productCount} products</small></div>
-                                    <button class="action-btn action-delete" onclick="deleteCategory('${c.id}')">🗑️</button>
-                                </div>
-                            </div>
-                        `).join('') || '<p>No categories</p>'}
+                        ${result.data.map(c => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;"><div><strong>${c.name}</strong><br><small>${c.productCount} products</small></div><button class="action-btn action-delete" onclick="deleteCategory('${c.id}')">🗑️</button></div></div>`).join('') || '<p>No categories</p>'}
                     </div>
                 </div>
             `;
@@ -982,9 +832,9 @@
         }
         
         async function deleteCategory(id) {
-            if (!confirm('Delete this category?')) return;
+            if (!confirm('Delete?')) return;
             await apiRequest(`/categories/${id}`, 'DELETE');
-            showToast('Category deleted!');
+            showToast('Deleted!');
             loadCategories();
         }
         
@@ -1002,11 +852,7 @@
                 <div class="card">
                     <div class="card-header"><h3>${t('lowStockAlert')}</h3></div>
                     <div class="card-body">
-                        ${d.lowStockProducts.map(p => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--warning);">
-                                <div class="card-body" style="padding:12px;"><strong>${p.name}</strong><br><small>Stock: ${p.quantity} | Reorder: ${p.reorderLevel}</small></div>
-                            </div>
-                        `).join('') || '<p>No low stock items</p>'}
+                        ${d.lowStockProducts.map(p => `<div class="card" style="margin-bottom:10px; border:1px solid var(--warning);"><div class="card-body" style="padding:12px;"><strong>${p.name}</strong><br><small>Stock: ${p.quantity} | Reorder: ${p.reorderLevel}</small></div></div>`).join('') || '<p>No low stock items</p>'}
                     </div>
                 </div>
             `;
@@ -1020,15 +866,7 @@
                 <div class="card">
                     <div class="card-header"><h3>${t('salesHistory')}</h3><span class="badge badge-success">${formatBirr(total)}</span></div>
                     <div class="card-body">
-                        ${result.data.map(s => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${s.orderNumber}</strong><br>
-                                    <small>${new Date(s.createdAt).toLocaleString()}</small><br>
-                                    <strong>${formatBirr(s.total)}</strong>
-                                </div>
-                            </div>
-                        `).join('') || '<p>No sales</p>'}
+                        ${result.data.map(s => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px;"><strong>${s.orderNumber}</strong><br><small>${new Date(s.createdAt).toLocaleString()}</small><br><strong>${formatBirr(s.total)}</strong></div></div>`).join('') || '<p>No sales</p>'}
                     </div>
                 </div>
             `;
@@ -1043,16 +881,7 @@
                     <div class="card-header"><h3>${t('expenses')}</h3><span class="badge badge-danger">${formatBirr(total)}</span></div>
                     <div class="card-body">
                         <button class="btn btn-primary btn-sm" onclick="showAddExpense()" style="margin-bottom:15px;">+ ${t('addExpense')}</button>
-                        ${result.data.map(e => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${e.description}</strong><br>
-                                    <small>${e.category}</small><br>
-                                    <strong>${formatBirr(e.amount)}</strong><br>
-                                    <button class="action-btn action-delete" onclick="deleteExpense('${e.id}')">🗑️</button>
-                                </div>
-                            </div>
-                        `).join('') || '<p>No expenses</p>'}
+                        ${result.data.map(e => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px;"><strong>${e.description}</strong><br><small>${e.category}</small><br><strong>${formatBirr(e.amount)}</strong><br><button class="action-btn action-delete" onclick="deleteExpense('${e.id}')">🗑️</button></div></div>`).join('') || '<p>No expenses</p>'}
                     </div>
                 </div>
             `;
@@ -1072,7 +901,7 @@
         
         async function saveExpense() {
             const data = { category: document.getElementById('expCategory').value, description: document.getElementById('expDesc').value, amount: parseFloat(document.getElementById('expAmount').value) };
-            if (!data.description || !data.amount) { showToast('Required fields missing', 'error'); return; }
+            if (!data.description || !data.amount) { showToast('Required', 'error'); return; }
             await apiRequest('/expenses', 'POST', data);
             showToast('Expense added!');
             closeModal();
@@ -1093,15 +922,7 @@
                 <div class="card">
                     <div class="card-header"><h3>${t('customers')} (${result.data.length})</h3><button class="btn btn-primary btn-sm" onclick="showAddCustomer()">+ ${t('addCustomer')}</button></div>
                     <div class="card-body">
-                        ${result.data.map(c => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${c.name}</strong><br>
-                                    <small>${c.email || 'No email'} | ${c.phone || 'No phone'}</small><br>
-                                    <button class="action-btn action-delete" onclick="deleteCustomer('${c.id}')">🗑️</button>
-                                </div>
-                            </div>
-                        `).join('') || '<p>No customers</p>'}
+                        ${result.data.map(c => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px;"><strong>${c.name}</strong><br><small>${c.email || 'No email'} | ${c.phone || 'No phone'}</small><br><button class="action-btn action-delete" onclick="deleteCustomer('${c.id}')">🗑️</button></div></div>`).join('') || '<p>No customers</p>'}
                     </div>
                 </div>
             `;
@@ -1142,15 +963,7 @@
                 <div class="card">
                     <div class="card-header"><h3>${t('suppliers')}</h3><button class="btn btn-primary btn-sm" onclick="showAddSupplier()">+ ${t('addSupplier')}</button></div>
                     <div class="card-body">
-                        ${result.data.map(s => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${s.companyName}</strong><br>
-                                    <small>${s.contactPerson}</small><br>
-                                    <button class="action-btn action-delete" onclick="deleteSupplier('${s.id}')">🗑️</button>
-                                </div>
-                            </div>
-                        `).join('') || '<p>No suppliers</p>'}
+                        ${result.data.map(s => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px;"><strong>${s.companyName}</strong><br><small>${s.contactPerson}</small><br><button class="action-btn action-delete" onclick="deleteSupplier('${s.id}')">🗑️</button></div></div>`).join('') || '<p>No suppliers</p>'}
                     </div>
                 </div>
             `;
@@ -1187,28 +1000,13 @@
         
         // ============ USERS ============
         async function loadUsers() {
-            if (currentUser.role !== 'admin') {
-                document.getElementById('contentArea').innerHTML = '<div class="card"><div class="card-body">Access denied</div></div>';
-                return;
-            }
+            if (currentUser.role !== 'admin') { document.getElementById('contentArea').innerHTML = '<div class="card"><div class="card-body">Access denied</div></div>'; return; }
             const result = await apiRequest('/users');
             document.getElementById('contentArea').innerHTML = `
                 <div class="card">
                     <div class="card-header"><h3>Users</h3><button class="btn btn-primary btn-sm" onclick="showAddUser()">+ Add User</button></div>
                     <div class="card-body">
-                        ${result.data.map(u => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px;">
-                                    <strong>${u.name}</strong><br>
-                                    <small>${u.email} | ${u.role}</small><br>
-                                    <span class="badge ${u.active ? 'badge-success' : 'badge-danger'}">${u.active ? 'Active' : 'Inactive'}</span>
-                                    ${u.id !== currentUser.id ? `
-                                        <button class="action-btn" onclick="toggleUser('${u.id}', ${!u.active})">${u.active ? 'Deactivate' : 'Activate'}</button>
-                                        <button class="action-btn action-delete" onclick="deleteUser('${u.id}')">🗑️</button>
-                                    ` : '<span class="badge badge-info">You</span>'}
-                                </div>
-                            </div>
-                        `).join('')}
+                        ${result.data.map(u => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px;"><strong>${u.name}</strong><br><small>${u.email} | ${u.role}</small><br><span class="badge ${u.active ? 'badge-success' : 'badge-danger'}">${u.active ? 'Active' : 'Inactive'}</span>${u.id !== currentUser.id ? `<button class="action-btn" onclick="toggleUser('${u.id}', ${!u.active})">${u.active ? 'Deactivate' : 'Activate'}</button><button class="action-btn action-delete" onclick="deleteUser('${u.id}')">🗑️</button>` : '<span class="badge badge-info">You</span>'}</div></div>`).join('')}
                     </div>
                 </div>
                 <div class="card">
@@ -1318,14 +1116,7 @@
                 <div class="card">
                     <div class="card-header"><h3>Point of Sale</h3></div>
                     <div class="card-body">
-                        ${products.data.map(p => `
-                            <div class="card" style="margin-bottom:10px; border:1px solid var(--border);">
-                                <div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;">
-                                    <div><strong>${p.name}</strong><br><small>${formatBirr(p.price)} | Stock: ${p.quantity}</small></div>
-                                    <button class="btn btn-primary btn-sm">Add</button>
-                                </div>
-                            </div>
-                        `).join('')}
+                        ${products.data.map(p => `<div class="card" style="margin-bottom:10px; border:1px solid var(--border);"><div class="card-body" style="padding:12px; display:flex; justify-content:space-between; align-items:center;"><div><strong>${p.name}</strong><br><small>${formatBirr(p.price)} | Stock: ${p.quantity}</small></div><button class="btn btn-primary btn-sm">Add</button></div></div>`).join('')}
                     </div>
                 </div>
             `;
